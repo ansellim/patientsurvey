@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "ef10fa91-bfcb-451f-a81f-5b42971497ca",
+		"name": "CS6440 Practicum",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST Feedback",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"PatientFirstName\": \"Fake first name\",\n    \"PatientLastName\": \"Fake last name\",\n    \"BedNumber\": \"12\",\n    \"Ward\": \"34\",\n    \"FeedbackProviderFirstName\": \"Example firstname\",\n    \"FeedbackProviderLastName\": \"Example lastname\",\n    \"FeedbackProviderRelationship\": \"family\",\n    \"FeedbackProviderContactNumber\": \"98396693\",\n    \"FeedbackProviderAddress\": \"Fake Address\",\n    \"doctorsCourtesyRating\": 1,\n    \"doctorsEmpathyRating\": 2,\n    \"doctorsExplanationRating\": 3,\n    \"doctorsSkillRating\": 4,\n    \"doctorsProfessionalismRating\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3006/feedback",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"feedback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Feedback",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3006/feedback",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"feedback"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
