@@ -38,6 +38,7 @@ export const createFeedback = async (req, res) => {
     PatientLastName,
     BedNumber,
     Ward,
+    Hospital,
     FeedbackProviderFirstName,
     FeedbackProviderLastName,
     FeedbackProviderRelationship,
@@ -60,7 +61,7 @@ export const createFeedback = async (req, res) => {
       Gender: "M", // hardcoded
       BedNumber: BedNumber,
       Ward: Ward,
-      Hospital: "Example Hospital", // hardcoded
+      Hospital: Hospital, // hardcoded
     },
     feedbackProvider: {
       FeedbackProviderFirstName: FeedbackProviderFirstName,
