@@ -23,10 +23,10 @@ The server was initially set up through the following steps:
 
 # MongoDB Details
 
-MongoDB creds:
-Username: wallaceanselsuyash
-Pwd: cs6440practicum
-Database: cs6440-practicum.
+- MongoDB creds:
+- Username: wallaceanselsuyash
+- Pwd: cs6440practicum
+- Database: cs6440-practicum.
 
 The above credentials have been hardcoded into the `CONNECTION_URL` variable in the index.js file (which is not best practice).
 
@@ -38,14 +38,14 @@ Right now, the only collection that exists in the database is the `feedbacks` co
 
 ## Fetch list of feedback objects available
 
-Type: GET
-Endpoint: http://localhost:3006/feedback
+- Type: GET
+- Endpoint: http://localhost:3006/feedback
 
 ## Create feedback:
 
-Type: POST
-Endpoint: http://localhost:3006/feedback
-Body: (Refer to Postman Collection)
+- Type: POST
+- Endpoint: http://localhost:3006/feedback
+- Body: (Refer to Postman Collection)
 
 # References
 

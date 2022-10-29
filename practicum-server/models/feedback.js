@@ -67,36 +67,5 @@ export default Feedback;
 // will be used to create feedback submissions, so they can
 // enforce any indicated requirements of the model.
 
-// Trying to support a nested model that will support a structure like the following:
+// Trying to support a nested model that will support a nested structure:
 // https://stackoverflow.com/a/39597985/11569643
-// {
-//   "_id": "123",
-//   "isActive": 1,
-//   "entryDate": "123",
-//   "patient": {
-//     "firstName": "first",
-//     "lastName": "last",
-//     "gender": "m/f",
-//     "birthdate": "19930101",
-//     "icNumber": "123414",
-//     "id": "abcdef",
-//     "hospital": "hospital abc",
-//     "ward": "ward A",
-//     "bedNumber": "123"
-//   },
-//   "feedbackProvider": {
-//     "firstName": "first",
-//     "lastName": "last",
-//     "contact": "+6512345678",
-//     "address": "Fake Address st.99 Block 123",
-//     "relationship": "self",
-//     "id": "12341234"
-//   },
-//   "survey": {
-//     "doctorCourtesyRating": 1,
-//     "doctorEmpathyRating": 2,
-//     "doctorExplanationRating": 3,
-//     "doctorSkillRating": 4,
-//     "doctorProfessionalismRating": 5
-//   }
-// }

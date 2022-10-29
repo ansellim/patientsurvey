@@ -6,7 +6,8 @@ import feedbackRoutes from "./routes/feedback.js";
 
 const app = express();
 
-// Using cors. It allows us to relax the security applied to an API. This is done by bypassing the Access-Control-Allow-Origin headers, which specify which origins can access the API.
+// Using cors. It allows us to relax the security applied to an API.
+// This is done by bypassing the Access-Control-Allow-Origin headers, which specify which origins can access the API.
 app.use(
   cors({
     origin: "*",
