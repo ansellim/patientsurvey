@@ -41,6 +41,11 @@ const surveyQuestions = {
           title: "Ward:",
           type: "text",
         },
+        {
+          name: "Hospital",
+          title: "Hospital:",
+          type: "text",
+        },
       ],
     },
     {
