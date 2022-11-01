@@ -129,7 +129,7 @@ const surveyQuestions = {
           //isRequired:true,
         },
       ],
-      "visibleIf": "{fpPatient}='No' and {patientrelated}='Yes'",
+      "visibleIf": "({fpPatient}='No' and {patientrelated}='Yes') or {patientrelated}='No'",
     },
     {
       elements: [
