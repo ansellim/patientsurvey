@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -21,6 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+
   color: white;
 }
 
@@ -35,4 +36,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+.centerframe{
+  padding-left: 20%;
+  padding-right:20%;
+}
+.logopos{
+  display: block;
+  margin-left: auto;
+  margin-right:auto;
+  width: 50%;
+  max-height: 15rem;
+  max-width: 15rem;
+  margin-top: 3rem;
+  margin-bottom: -3rem;
 }
