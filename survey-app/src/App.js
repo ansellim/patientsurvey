@@ -129,7 +129,7 @@ const surveyQuestions = {
           //isRequired:true,
         },
       ],
-      "visibleIf": "{fpPatient}='No' and {patientrelated}='Yes'",
+      "visibleIf": "({fpPatient}='No' and {patientrelated}='Yes') or {patientrelated}='No'",
     },
     {
       elements: [
@@ -169,6 +169,46 @@ const surveyQuestions = {
         },
       ],
       "visibleIf": "{patientrelated}='Yes'",
+    },
+    { //for specific feedback only
+      elements: [
+        {
+          type: "html",
+          html: "<h2>Please provide the specific feedback that you have for us.</h2>",
+        },
+        {
+          "type": "text",
+        //  "inputMask": "datetime",
+        //  "inputFormat": "dd/mm/yyyy",
+          "name": "IncidentDate",
+          "title": "Date:"
+        },
+        {
+          "type": "radiogroup",
+          "choices": [
+            {
+              "value": "compliment",
+              "text": "Compliment"
+            }, {
+              "value": "complaint",
+              "text": "Complaint"
+            }, {
+              "value": "suggestion",
+              "text": "Suggestion"
+            }
+          ],
+          "colCount": 0,
+          //"isRequired": true,
+          "name": "specificIncidentNature",
+          "title": "Feedback nature:"
+        },
+        {
+          "type": "comment",
+          "name": "specificIncident",
+          "title": "Feedback details:"
+        }
+      ],
+     "visibleIf": "{fbPurpose}='Specific feedback' or {fbPurpose}='Both general and specific feedback'",
     },
     { //for general feedback only
       elements: [
@@ -1041,27 +1081,6 @@ const surveyQuestions = {
         },
       ],
      "visibleIf": "{fbPurpose}='General feedback' or {fbPurpose}='Both general and specific feedback'",
-    },
-    { //for specific feedback only
-      elements: [
-        {
-          type: "html",
-          html: "<h2>Please provide the specific feedback that you have for us.</h2>",
-        },
-        {
-          "type": "text",
-        //  "inputMask": "datetime",
-        //  "inputFormat": "dd/mm/yyyy",
-          "name": "IncidentDate",
-          "title": "Date:"
-        },
-        {
-          "type": "comment",
-          "name": "specificIncident",
-          "title": "Feedback details:"
-        }
-      ],
-     "visibleIf": "{fbPurpose}='Specific feedback' or {fbPurpose}='Both general and specific feedback'",
     },
     {
       elements: [
