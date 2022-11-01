@@ -1056,6 +1056,25 @@ const surveyQuestions = {
           "title": "Date:"
         },
         {
+          "type": "radiogroup",
+          "choices": [
+            {
+              "value": "compliment",
+              "text": "Compliment"
+            }, {
+              "value": "complaint",
+              "text": "Complaint"
+            }, {
+              "value": "suggestion",
+              "text": "Suggestion"
+            }
+          ],
+          "colCount": 0,
+          //"isRequired": true,
+          "name": "specificIncidentNature",
+          "title": "Feedback nature:"
+        },
+        {
           "type": "comment",
           "name": "specificIncident",
           "title": "Feedback details:"
