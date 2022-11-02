@@ -254,7 +254,6 @@ export const createFeedback = async (req, res) => {
       },
     }
   });
-  //console.log(newFeedback.survey.generalsurvey.hospitalityrating);
   try {
     await newFeedback.save();
 
