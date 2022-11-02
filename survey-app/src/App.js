@@ -217,93 +217,117 @@ const surveyQuestions = {
           html: "<h2>Please rate the following service aspects:</h2>",
         },
         {
-          type: "matrix",
-          name: "efficiency",
-          title: "Please rate our efficiency:",
-          columns:[
+          "type": "panel",
+          "name": "efficiencyscoring",
+          elements:
+          [
             {
-              value: 1,
-              text: "Strongly Disagree",
+              type: "matrix",
+              name: "efficiency",
+              title: "Please rate our efficiency:",
+              columns:[
+                {
+                  value: 1,
+                  text: "Strongly Disagree",
+                },
+                {
+                  value: 2,
+                  text: "Disagree",
+                },
+                {
+                  value: 3,
+                  text: "Neutral",
+                },
+                {
+                  value: 4,
+                  text: "Agree",
+                },
+                {
+                  value: 5,
+                  text: "Strongly Agree",
+                },
+              ],
+              rows:[
+                {
+                  value: "waitingTime",
+                  text: "Waiting time was acceptable."
+                },
+                {
+                  value: "serviceSpeed",
+                  text: "Service was efficient.",
+                },
+                {
+                  value: "serviceAccuracy",
+                  text: "Service was delivered up to my expectations.",
+                },
+                {
+                  value: "valueForMoney",
+                  text: "Service was worth what I paid for.",
+                }
+              ]
             },
             {
-              value: 2,
-              text: "Disagree",
+              type: "comment",
+              name: "efficiencycomments",
+              title:"Any comments for our efficiency?",
             },
-            {
-              value: 3,
-              text: "Neutral",
-            },
-            {
-              value: 4,
-              text: "Agree",
-            },
-            {
-              value: 5,
-              text: "Strongly Agree",
-            },
-          ],
-          rows:[
-            {
-              value: "waitingTime",
-              text: "Waiting time was acceptable."
-            },
-            {
-              value: "serviceSpeed",
-              text: "Service was efficient.",
-            },
-            {
-              value: "serviceAccuracy",
-              text: "Service was delivered up to my expectations.",
-            },
-            {
-              value: "valueForMoney",
-              text: "Service was worth what I paid for.",
-            }
           ]
         },
         {
-          type: "matrix",
-          name: "hospitality",
-          title: "Please rate our hospitality:",
-          columns:[
+          "type": "panel",
+          "name": "hospitalityscoring",
+          elements:
+          [
             {
-              value: 1,
-              text: "Strongly Disagree",
+              type: "matrix",
+              name: "hospitality",
+              title: "Please rate our hospitality:",
+              columns:[
+                {
+                  value: 1,
+                  text: "Strongly Disagree",
+                },
+                {
+                  value: 2,
+                  text: "Disagree",
+                },
+                {
+                  value: 3,
+                  text: "Neutral",
+                },
+                {
+                  value: 4,
+                  text: "Agree",
+                },
+                {
+                  value: 5,
+                  text: "Strongly Agree",
+                },
+              ],
+              rows:[
+                {
+                  value: "foodAndBeverage",
+                  text: "Food quality was up to my expectations."
+                },
+                {
+                  value: "safetyAndSecurity",
+                  text: "I felt safe throughout my visit.",
+                },
+                {
+                  value: "facilityManagement",
+                  text: "The facilities and maintenance here met my expectations.",
+                },
+                {
+                  value: "housekeeping",
+                  text: "The environment was clean and hygienic.",
+                }
+              ]
             },
             {
-              value: 2,
-              text: "Disagree",
+              type: "comment",
+              name: "hospitalitycomments",
+              title:"Any comments for our hospitality?",
             },
-            {
-              value: 3,
-              text: "Neutral",
-            },
-            {
-              value: 4,
-              text: "Agree",
-            },
-            {
-              value: 5,
-              text: "Strongly Agree",
-            },
-          ],
-          rows:[
-            {
-              value: "foodAndBeverage",
-              text: "Food quality was up to my expectations."
-            },
-            {
-              value: "safetyAndSecurity",
-              text: "I felt safe throughout my visit.",
-            },
-            {
-              value: "facilityManagement",
-              text: "The facilities and maintenance here met my expectations.",
-            },
-            {
-              value: "housekeeping",
-              text: "The environment was clean and hygienic.",
-            }
           ]
         },
         {
@@ -375,23 +399,23 @@ const surveyQuestions = {
               ],
               rows:[
                 {
-                  value: "courtesyrating1",
+                  value: "staffcourtesyrating1",
                   text: "He/She was courteous to me throughout my visit."
                 },
                 {
-                  value: "empathyrating1",
+                  value: "staffempathyrating1",
                   text: "He/She showed empathy to me throughout my visit.",
                 },
                 {
-                  value: "explanationrating1",
+                  value: "staffexplanationrating1",
                   text: "He/She was polite and patient in explaining things to me throughout my visit.",
                 },
                 {
-                  value: "skillsrating1",
+                  value: "staffskillsrating1",
                   text: "He/She was skillful in performing duties throughout my visit.",
                 },
                 {
-                  value: "professionalrating1",
+                  value: "staffprofessionalrating1",
                   text: "He/She was professional in his/her work throughout my visit.",
                 }, 
               ]
@@ -455,23 +479,23 @@ const surveyQuestions = {
               ],
               rows:[
                 {
-                  value: "courtesyrating2",
+                  value: "staffcourtesyrating2",
                   text: "He/She was courteous to me throughout my visit."
                 },
                 {
-                  value: "empathyrating2",
+                  value: "staffempathyrating2",
                   text: "He/She showed empathy to me throughout my visit.",
                 },
                 {
-                  value: "explanationrating2",
+                  value: "staffexplanationrating2",
                   text: "He/She was polite and patient in explaining things to me throughout my visit.",
                 },
                 {
-                  value: "skillsrating2",
+                  value: "staffskillsrating2",
                   text: "He/She was skillful in performing duties throughout my visit.",
                 },
                 {
-                  value: "professionalrating2",
+                  value: "staffprofessionalrating2",
                   text: "He/She was professional in his/her work throughout my visit.",
                 }, 
               ]
@@ -535,23 +559,23 @@ const surveyQuestions = {
               ],
               rows:[
                 {
-                  value: "courtesyrating3",
+                  value: "staffcourtesyrating3",
                   text: "He/She was courteous to me throughout my visit."
                 },
                 {
-                  value: "empathyrating3",
+                  value: "staffempathyrating3",
                   text: "He/She showed empathy to me throughout my visit.",
                 },
                 {
-                  value: "explanationrating3",
+                  value: "staffexplanationrating3",
                   text: "He/She was polite and patient in explaining things to me throughout my visit.",
                 },
                 {
-                  value: "skillsrating3",
+                  value: "staffskillsrating3",
                   text: "He/She was skillful in performing duties throughout my visit.",
                 },
                 {
-                  value: "professionalrating3",
+                  value: "staffprofessionalrating3",
                   text: "He/She was professional in his/her work throughout my visit.",
                 }, 
               ]
@@ -615,23 +639,23 @@ const surveyQuestions = {
               ],
               rows:[
                 {
-                  value: "courtesyrating4",
+                  value: "staffcourtesyrating4",
                   text: "He/She was courteous to me throughout my visit."
                 },
                 {
-                  value: "empathyrating4",
+                  value: "staffempathyrating4",
                   text: "He/She showed empathy to me throughout my visit.",
                 },
                 {
-                  value: "explanationrating4",
+                  value: "staffexplanationrating4",
                   text: "He/She was polite and patient in explaining things to me throughout my visit.",
                 },
                 {
-                  value: "skillsrating4",
+                  value: "staffskillsrating4",
                   text: "He/She was skillful in performing duties throughout my visit.",
                 },
                 {
-                  value: "professionalrating4",
+                  value: "staffprofessionalrating4",
                   text: "He/She was professional in his/her work throughout my visit.",
                 }, 
               ]
@@ -695,23 +719,23 @@ const surveyQuestions = {
               ],
               rows:[
                 {
-                  value: "courtesyrating5",
+                  value: "staffcourtesyrating5",
                   text: "He/She was courteous to me throughout my visit."
                 },
                 {
-                  value: "empathyrating5",
+                  value: "staffempathyrating5",
                   text: "He/She showed empathy to me throughout my visit.",
                 },
                 {
-                  value: "explanationrating5",
+                  value: "staffexplanationrating5",
                   text: "He/She was polite and patient in explaining things to me throughout my visit.",
                 },
                 {
-                  value: "skillsrating5",
+                  value: "staffskillsrating5",
                   text: "He/She was skillful in performing duties throughout my visit.",
                 },
                 {
-                  value: "professionalrating5",
+                  value: "staffprofessionalrating5",
                   text: "He/She was professional in his/her work throughout my visit.",
                 }, 
               ]
@@ -780,23 +804,23 @@ const surveyQuestions = {
               ],
               rows:[
                 {
-                  value: "courtesyrating1",
+                  value: "doctorcourtesyrating1",
                   text: "He/She was courteous to me throughout my visit."
                 },
                 {
-                  value: "empathyrating1",
+                  value: "doctorempathyrating1",
                   text: "He/She showed empathy to me throughout my visit.",
                 },
                 {
-                  value: "explanationrating1",
+                  value: "doctorexplanationrating1",
                   text: "He/She was polite and patient in explaining things to me throughout my visit.",
                 },
                 {
-                  value: "skillsrating1",
+                  value: "doctorskillsrating1",
                   text: "He/She was skillful in performing duties throughout my visit.",
                 },
                 {
-                  value: "professionalrating1",
+                  value: "doctorprofessionalrating1",
                   text: "He/She was professional in his/her work throughout my visit.",
                 }, 
               ]
@@ -847,23 +871,23 @@ const surveyQuestions = {
               ],
               rows:[
                 {
-                  value: "courtesyrating2",
+                  value: "doctorcourtesyrating2",
                   text: "He/She was courteous to me throughout my visit."
                 },
                 {
-                  value: "empathyrating2",
+                  value: "doctorempathyrating2",
                   text: "He/She showed empathy to me throughout my visit.",
                 },
                 {
-                  value: "explanationrating2",
+                  value: "doctorexplanationrating2",
                   text: "He/She was polite and patient in explaining things to me throughout my visit.",
                 },
                 {
-                  value: "skillsrating2",
+                  value: "doctorskillsrating2",
                   text: "He/She was skillful in performing duties throughout my visit.",
                 },
                 {
-                  value: "professionalrating2",
+                  value: "doctorprofessionalrating2",
                   text: "He/She was professional in his/her work throughout my visit.",
                 }, 
               ]
@@ -914,23 +938,23 @@ const surveyQuestions = {
               ],
               rows:[
                 {
-                  value: "courtesyrating3",
+                  value: "doctorcourtesyrating3",
                   text: "He/She was courteous to me throughout my visit."
                 },
                 {
-                  value: "empathyrating3",
+                  value: "doctorempathyrating3",
                   text: "He/She showed empathy to me throughout my visit.",
                 },
                 {
-                  value: "explanationrating3",
+                  value: "doctorexplanationrating3",
                   text: "He/She was polite and patient in explaining things to me throughout my visit.",
                 },
                 {
-                  value: "skillsrating3",
+                  value: "doctorskillsrating3",
                   text: "He/She was skillful in performing duties throughout my visit.",
                 },
                 {
-                  value: "professionalrating3",
+                  value: "doctorprofessionalrating3",
                   text: "He/She was professional in his/her work throughout my visit.",
                 }, 
               ]
@@ -982,23 +1006,23 @@ const surveyQuestions = {
               ],
               rows:[
                 {
-                  value: "courtesyrating4",
+                  value: "doctorcourtesyrating4",
                   text: "He/She was courteous to me throughout my visit."
                 },
                 {
-                  value: "empathyrating4",
+                  value: "doctorempathyrating4",
                   text: "He/She showed empathy to me throughout my visit.",
                 },
                 {
-                  value: "explanationrating4",
+                  value: "doctorexplanationrating4",
                   text: "He/She was polite and patient in explaining things to me throughout my visit.",
                 },
                 {
-                  value: "skillsrating4",
+                  value: "doctorskillsrating4",
                   text: "He/She was skillful in performing duties throughout my visit.",
                 },
                 {
-                  value: "professionalrating4",
+                  value: "doctorprofessionalrating4",
                   text: "He/She was professional in his/her work throughout my visit.",
                 }, 
               ]
@@ -1050,23 +1074,23 @@ const surveyQuestions = {
               ],
               rows:[
                 {
-                  value: "courtesyrating5",
+                  value: "doctorcourtesyrating5",
                   text: "He/She was courteous to me throughout my visit."
                 },
                 {
-                  value: "empathyrating5",
+                  value: "doctorempathyrating5",
                   text: "He/She showed empathy to me throughout my visit.",
                 },
                 {
-                  value: "explanationrating5",
+                  value: "doctorexplanationrating5",
                   text: "He/She was polite and patient in explaining things to me throughout my visit.",
                 },
                 {
-                  value: "skillsrating5",
+                  value: "doctorskillsrating5",
                   text: "He/She was skillful in performing duties throughout my visit.",
                 },
                 {
-                  value: "professionalrating5",
+                  value: "doctorprofessionalrating5",
                   text: "He/She was professional in his/her work throughout my visit.",
                 }, 
               ]
@@ -1085,9 +1109,13 @@ const surveyQuestions = {
     {
       elements: [
         {
+          type: "html",
+          html: "<h2>Please rate your overall experience with us:</h2>",
+        },
+        {
           name: "OverallSatisfaction",
           title:
-            "On a scale of zero to ten, how satisfied were you with your experience at our hospital?",
+            "On a scale of 0 to 10, how satisfied were you with your experience at our hospital?",
           type: "rating",
           isRequired: true, 
           rateMin: 0,
@@ -1098,7 +1126,7 @@ const surveyQuestions = {
         {
           name: "NetPromoterScore",
           title:
-            "On a scale of zero to ten, how likely are you to recommend our hospital to a friend or colleague?",
+            "On a scale of 0 to 10, how likely are you to recommend our hospital to a friend or colleague?",
           type: "rating",
           isRequired: true, 
           rateMin: 0,
@@ -1121,6 +1149,7 @@ function App() {
     //const data = JSON.stringify(responses.data);
    // console.log(responses.data);
     // Sending data to backend:
+  //  responses.data.timestamp = new Date();
     createFeedback(responses.data);
 
     //createFeedback(responses.data);
