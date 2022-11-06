@@ -2,22 +2,13 @@
 
 # dependencies
 /node_modules
-/survey-app/node_modules
-/practicum-server/node_modules
-/dashboard/node_modules
 /.pnp
 .pnp.js
 
 # testing
 /coverage
-/survey-app/coverage
-/practicum-server/coverage
-/dashboard/coverage
 
 # production
-/survey-app/build
-/practicum-server/build
-/dashboard/build
 /build
 
 # misc
