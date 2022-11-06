@@ -1,6 +1,7 @@
 import * as api from "../api";
 
-// action creator
+// action creator: get Feedback Items and dispatch
+
 export const getFeedbackItems = () => async (dispatch) => {
 
     try {
