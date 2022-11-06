@@ -5,6 +5,7 @@
 /survey-app/node_modules
 /practicum-server/node_modules
 /dashboard/node_modules
+/hospital-platform/node_modules
 /.pnp
 .pnp.js
 
@@ -12,12 +13,14 @@
 /coverage
 /survey-app/coverage
 /practicum-server/coverage
+/hospital-platform/coverage
 /dashboard/coverage
 
 # production
 /survey-app/build
 /practicum-server/build
 /dashboard/build
+/hospital-platform/build
 /build
 
 # misc

@@ -8,7 +8,25 @@ import { Dashboard, Opentickets, Employees } from "./pages";
 
 import "./App.css";
 
+
+import {useEffect} from 'react';
+import {getFeedbackItems} from "./actions/feedbackItems";
+
+import { Box, Container, Grid, Card, CardContent, Typography } from '@mui/material';
+
+import {useDispatch} from 'react-redux';
+
+import {SatisfactionScore} from './components/SatisfactionScore';
+
+
 const App = () => {
+
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(getFeedbackItems());
+  },[dispatch]);
+
   // const { activeMenu } = useStateContext();
   const activeMenu = true;
   return (

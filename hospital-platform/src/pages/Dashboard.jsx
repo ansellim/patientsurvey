@@ -2,6 +2,7 @@ import React from "react";
 import Chart from "react-apexcharts";
 import ApexCharts from "apexcharts";
 import LineChart from "../components/charts/LineChart";
+import { SatisfactionScore } from "../components/SatisfactionScore";
 
 const DUMMY_DATA = {
   options: {
@@ -30,6 +31,9 @@ const Dashboard = () => {
       <aside className="col-span-5 md:col-span-2 p-10 bg-gray-700 row-span-2">
         <h1 className="text-center text-2xl text-white">
           Ansel's cards in this div.
+
+          <SatisfactionScore></SatisfactionScore>
+
         </h1>
       </aside>
 
