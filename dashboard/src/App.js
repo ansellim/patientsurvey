@@ -1,23 +1,219 @@
-import logo from './logo.svg';
 import './App.css';
+
+import { Box, Container, Grid, Card, CardContent, Typography } from '@mui/material';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          py: 8
+        }}
+      >
+        <Container maxWidth={false}>
+          <Grid
+            container
+            spacing={3}
+          >
+            <Grid
+              item
+              lg={3}
+              sm={6}
+              xl={3}
+              xs={12}
+            >
+              <Card sx={{ height: '100%' }}>
+                <CardContent>
+                  <Grid
+                    container
+                    spacing={3}
+                    sx={{ justifyContent: 'space-between' }}
+                  >
+                    <Grid item>
+                      <Typography
+                        color="textSecondary"
+                        gutterBottom
+                        variant="overline"
+                      >
+                        <h1>Overall satisfaction</h1>
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Card>
+            </Grid>
+
+            <Grid
+              item
+              xl={3}
+              lg={3}
+              sm={6}
+              xs={12}
+            >
+                <Card sx={{ height: '100%' }}>
+                <CardContent>
+                  <Grid
+                    container
+                    spacing={3}
+                    sx={{ justifyContent: 'space-between' }}
+                  >
+                    <Grid item>
+                      <Typography
+                        color="textSecondary"
+                        gutterBottom
+                        variant="overline"
+                      >
+                        <h1>Net Promoter Score</h1>
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Card>
+            </Grid>
+
+            <Grid
+              item
+              xl={3}
+              lg={3}
+              sm={6}
+              xs={12}
+            >
+                              <Card sx={{ height: '100%' }}>
+                <CardContent>
+                  <Grid
+                    container
+                    spacing={3}
+                    sx={{ justifyContent: 'space-between' }}
+                  >
+                    <Grid item>
+                      <Typography
+                        color="textSecondary"
+                        gutterBottom
+                        variant="overline"
+                      >
+                        <h1>Feedback Ticket Status</h1>
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid
+              item
+              xl={3}
+              lg={3}
+              sm={6}
+              xs={12}
+            >
+                              <Card sx={{ height: '100%' }}>
+                <CardContent>
+                  <Grid
+                    container
+                    spacing={3}
+                    sx={{ justifyContent: 'space-between' }}
+                  >
+                    <Grid item>
+                      <Typography
+                        color="textSecondary"
+                        gutterBottom
+                        variant="overline"
+                      >
+                       <h2>Satisfaction with Staff</h2>
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid
+              item
+              lg={8}
+              md={12}
+              xl={9}
+              xs={12}
+            >
+                                       <Card sx={{ height: '100%' }}>
+                <CardContent>
+                  <Grid
+                    container
+                    spacing={3}
+                    sx={{ justifyContent: 'space-between' }}
+                  >
+                    <Grid item>
+                      <Typography
+                        color="textSecondary"
+                        gutterBottom
+                        variant="overline"
+                      >
+                       <h2>Satisfaction with Hospitality</h2>
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid
+              item
+              lg={4}
+              md={6}
+              xl={3}
+              xs={12}
+            >
+                                         <Card sx={{ height: '100%' }}>
+                <CardContent>
+                  <Grid
+                    container
+                    spacing={3}
+                    sx={{ justifyContent: 'space-between' }}
+                  >
+                    <Grid item>
+                      <Typography
+                        color="textSecondary"
+                        gutterBottom
+                        variant="overline"
+                      >
+                       <h2>Satisfaction with Efficiency</h2>
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid
+              item
+              lg={4}
+              md={6}
+              xl={3}
+              xs={12}
+            >
+                                         <Card sx={{ height: '100%' }}>
+                <CardContent>
+                  <Grid
+                    container
+                    spacing={3}
+                    sx={{ justifyContent: 'space-between' }}
+                  >
+                    <Grid item>
+                      <Typography
+                        color="textSecondary"
+                        gutterBottom
+                        variant="overline"
+                      >
+                       <h2>Satisfaction with Value for Money</h2>
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+
     </div>
   );
 }
