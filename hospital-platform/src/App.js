@@ -4,7 +4,7 @@ import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { Sidebar } from "./components";
 
-import { Dashboard, Opentickets } from "./pages";
+import { Dashboard, Opentickets, Employees } from "./pages";
 
 import "./App.css";
 
@@ -43,10 +43,7 @@ const App = () => {
               <Route path="/opentickets" element={<Opentickets />} />
 
               {/* Navigating to Employees page */}
-              <Route
-                path="/employees"
-                element="If we add a simple interface for adding/editing employees, it can show here."
-              />
+              <Route path="/employees" element={<Employees />} />
             </Routes>
           </div>
         </div>

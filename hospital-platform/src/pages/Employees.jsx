@@ -1,26 +1,6 @@
 import React from "react";
-import Chart from "react-apexcharts";
-import ApexCharts from "apexcharts";
-import LineChart from "../components/charts/LineChart";
 
-const DUMMY_DATA = {
-  options: {
-    chart: {
-      id: "basic-bar",
-    },
-    xaxis: {
-      categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
-    },
-  },
-  series: [
-    {
-      name: "series-1",
-      data: [30, 40, 45, 50, 49, 60, 70, 91],
-    },
-  ],
-};
-
-const Dashboard = () => {
+const Employees = () => {
   return (
     <div className=" grid grid-cols-6 h-screen grid-rows-5">
       <header className="col-span-6 p-10 bg-amber-200 row-span-1">
@@ -45,14 +25,9 @@ const Dashboard = () => {
         <h1 className="text-center text-2xl">
           Suyash will add the graphs here.
         </h1>
-        {/*Example of producing a chart using ApexCharts: https://codesandbox.io/s/iryeq?file=/src/App.js:801-829 */}
-        {/*Tailwind CSS Grid guide: https://www.kindacode.com/article/tailwind-css-grid-examples/ */}
-        <LineChart series={DUMMY_DATA.series} options={DUMMY_DATA.options} />
       </footer>
     </div>
   );
 };
-// {DUMMY_DATA.series}
-// {DUMMY_DATA.options}
 
-export default Dashboard;
+export default Employees;
