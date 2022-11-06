@@ -1,8 +1,23 @@
 import './App.css';
 
+import {useEffect} from 'react';
+import {getFeedbackItems} from "./actions/feedbackItems";
+
 import { Box, Container, Grid, Card, CardContent, Typography } from '@mui/material';
 
+import {useDispatch} from 'react-redux';
+
+import {SatisfactionScore} from './components/SatisfactionScore';
+
+
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(getFeedbackItems());
+  },[dispatch]);
+
   return (
     <div className="App">
 
@@ -40,6 +55,8 @@ function App() {
                         variant="overline"
                       >
                         <h1>Overall satisfaction</h1>
+                        <SatisfactionScore>
+                          </SatisfactionScore>
                       </Typography>
                     </Grid>
                   </Grid>
@@ -54,7 +71,7 @@ function App() {
               sm={6}
               xs={12}
             >
-                <Card sx={{ height: '100%' }}>
+              <Card sx={{ height: '100%' }}>
                 <CardContent>
                   <Grid
                     container
@@ -82,7 +99,7 @@ function App() {
               sm={6}
               xs={12}
             >
-                              <Card sx={{ height: '100%' }}>
+              <Card sx={{ height: '100%' }}>
                 <CardContent>
                   <Grid
                     container
@@ -109,7 +126,7 @@ function App() {
               sm={6}
               xs={12}
             >
-                              <Card sx={{ height: '100%' }}>
+              <Card sx={{ height: '100%' }}>
                 <CardContent>
                   <Grid
                     container
@@ -122,7 +139,7 @@ function App() {
                         gutterBottom
                         variant="overline"
                       >
-                       <h2>Satisfaction with Staff</h2>
+                        <h2>Satisfaction with Staff</h2>
                       </Typography>
                     </Grid>
                   </Grid>
@@ -136,7 +153,7 @@ function App() {
               xl={9}
               xs={12}
             >
-                                       <Card sx={{ height: '100%' }}>
+              <Card sx={{ height: '100%' }}>
                 <CardContent>
                   <Grid
                     container
@@ -149,7 +166,7 @@ function App() {
                         gutterBottom
                         variant="overline"
                       >
-                       <h2>Satisfaction with Hospitality</h2>
+                        <h2>Satisfaction with Hospitality</h2>
                       </Typography>
                     </Grid>
                   </Grid>
@@ -163,7 +180,7 @@ function App() {
               xl={3}
               xs={12}
             >
-                                         <Card sx={{ height: '100%' }}>
+              <Card sx={{ height: '100%' }}>
                 <CardContent>
                   <Grid
                     container
@@ -176,7 +193,7 @@ function App() {
                         gutterBottom
                         variant="overline"
                       >
-                       <h2>Satisfaction with Efficiency</h2>
+                        <h2>Satisfaction with Efficiency</h2>
                       </Typography>
                     </Grid>
                   </Grid>
@@ -190,7 +207,7 @@ function App() {
               xl={3}
               xs={12}
             >
-                                         <Card sx={{ height: '100%' }}>
+              <Card sx={{ height: '100%' }}>
                 <CardContent>
                   <Grid
                     container
@@ -203,7 +220,7 @@ function App() {
                         gutterBottom
                         variant="overline"
                       >
-                       <h2>Satisfaction with Value for Money</h2>
+                        <h2>Satisfaction with Value for Money</h2>
                       </Typography>
                     </Grid>
                   </Grid>

@@ -21,8 +21,10 @@ app.use(bodyParser.urlencoded({ limit: "1mb", extended: true }));
 
 // Makes it so any route found under the feedbackRoutes
 // router imported starts with the /feedback path
+// should be placed after app.use(cors())
 app.use("/feedback", feedbackRoutes);
 
+// Connection URL username and password should be hidden inside .env file when deploying.
 const CONNECTION_URL =
   "mongodb+srv://wallaceanselsuyash:cs6440practicum@cluster0.yfkcdru.mongodb.net/cs6440-practicum";
 
