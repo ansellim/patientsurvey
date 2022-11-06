@@ -16,7 +16,7 @@ import { Box, Container, Grid, Card, CardContent, Typography } from '@mui/materi
 
 import {useDispatch} from 'react-redux';
 
-import {SatisfactionScore} from './components/SatisfactionScore';
+import {SatisfactionScore} from './components/cards/SatisfactionScore';
 
 
 const App = () => {
