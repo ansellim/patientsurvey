@@ -246,6 +246,10 @@ const surveyQuestions = {
                   value: 5,
                   text: "Strongly Agree",
                 },
+                {
+                  value: 6,
+                  text: "Not applicable",
+                },
               ],
               rows:[
                 {
@@ -302,6 +306,10 @@ const surveyQuestions = {
                 {
                   value: 5,
                   text: "Strongly Agree",
+                },
+                {
+                  value: 6,
+                  text: "Not applicable",
                 },
               ],
               rows:[
@@ -396,6 +404,10 @@ const surveyQuestions = {
                   value: 5,
                   text: "Strongly Agree",
                 },
+                {
+                  value: 6,
+                  text: "Not applicable",
+                },
               ],
               rows:[
                 {
@@ -475,6 +487,10 @@ const surveyQuestions = {
                 {
                   value: 5,
                   text: "Strongly Agree",
+                },
+                {
+                  value: 6,
+                  text: "Not applicable",
                 },
               ],
               rows:[
@@ -556,6 +572,10 @@ const surveyQuestions = {
                   value: 5,
                   text: "Strongly Agree",
                 },
+                {
+                  value: 6,
+                  text: "Not applicable",
+                },
               ],
               rows:[
                 {
@@ -636,6 +656,10 @@ const surveyQuestions = {
                   value: 5,
                   text: "Strongly Agree",
                 },
+                {
+                  value: 6,
+                  text: "Not applicable",
+                },
               ],
               rows:[
                 {
@@ -715,6 +739,10 @@ const surveyQuestions = {
                 {
                   value: 5,
                   text: "Strongly Agree",
+                },
+                {
+                  value: 6,
+                  text: "Not applicable",
                 },
               ],
               rows:[
@@ -801,6 +829,10 @@ const surveyQuestions = {
                   value: 5,
                   text: "Strongly Agree",
                 },
+                {
+                  value: 6,
+                  text: "Not applicable",
+                },
               ],
               rows:[
                 {
@@ -868,6 +900,10 @@ const surveyQuestions = {
                   value: 5,
                   text: "Strongly Agree",
                 },
+                {
+                  value: 6,
+                  text: "Not applicable",
+                },
               ],
               rows:[
                 {
@@ -934,6 +970,10 @@ const surveyQuestions = {
                 {
                   value: 5,
                   text: "Strongly Agree",
+                },
+                {
+                  value: 6,
+                  text: "Not applicable",
                 },
               ],
               rows:[
@@ -1003,6 +1043,10 @@ const surveyQuestions = {
                   value: 5,
                   text: "Strongly Agree",
                 },
+                {
+                  value: 6,
+                  text: "Not applicable",
+                },
               ],
               rows:[
                 {
@@ -1070,6 +1114,10 @@ const surveyQuestions = {
                 {
                   value: 5,
                   text: "Strongly Agree",
+                },
+                {
+                  value: 6,
+                  text: "Not applicable",
                 },
               ],
               rows:[
@@ -1151,7 +1199,9 @@ function App() {
     // Sending data to backend:
   //  responses.data.timestamp = new Date();
     createFeedback(responses.data);
-
+    setTimeout(function() { 
+      survey.clear();
+   }, 3000);
     //createFeedback(responses.data);
   }, []);
 
