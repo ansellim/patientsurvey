@@ -704,7 +704,7 @@ const surveyQuestions = {
               title: "Staff Role:",
               "choices": [
                 "Nursing",
-                "Allied Health (therapist, radiographer, therapist)",
+                "Allied Health (therapist, radiographer, phlebotomist)",
                 "Facilities",
                 "Housekeeping",
                 "Security",
@@ -789,7 +789,7 @@ const surveyQuestions = {
               title: "Staff Role:",
               "choices": [
                 "Nursing",
-                "Allied Health (therapist, radiographer, therapist)",
+                "Allied Health (therapist, radiographer, phlebotomist)",
                 "Facilities",
                 "Housekeeping",
                 "Security",
@@ -874,12 +874,12 @@ const surveyQuestions = {
               title: "Staff Role:",
               "choices": [
                 "Nursing",
-                "Allied Health (therapist, radiographer, therapist)",
+                "Allied Health (therapist, radiographer, phlebotomist)",
                 "Facilities",
                 "Housekeeping",
                 "Security",
                 "Administration",
-                "Food and Beverage"
+                "Food and Beverage", 
               ]
             },
             {
@@ -959,7 +959,7 @@ const surveyQuestions = {
               title: "Staff Role:",
               "choices": [
                 "Nursing",
-                "Allied Health (therapist, radiographer, therapist)",
+                "Allied Health (therapist, radiographer, phlebotomist)",
                 "Facilities",
                 "Housekeeping",
                 "Security",
@@ -1044,7 +1044,7 @@ const surveyQuestions = {
               title: "Staff Role:",
               "choices": [
                 "Nursing",
-                "Allied Health (therapist, radiographer, therapist)",
+                "Allied Health (therapist, radiographer, phlebotomist)",
                 "Facilities",
                 "Housekeeping",
                 "Security",
