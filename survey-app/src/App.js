@@ -708,7 +708,8 @@ const surveyQuestions = {
                 "Facilities",
                 "Housekeeping",
                 "Security",
-                "Administration"
+                "Administration",
+                "Food and Beverage"
               ]
             },
             {
@@ -792,7 +793,8 @@ const surveyQuestions = {
                 "Facilities",
                 "Housekeeping",
                 "Security",
-                "Administration"
+                "Administration",
+                "Food and Beverage"
               ]
             },
             {
@@ -876,7 +878,8 @@ const surveyQuestions = {
                 "Facilities",
                 "Housekeeping",
                 "Security",
-                "Administration"
+                "Administration",
+                "Food and Beverage"
               ]
             },
             {
@@ -960,7 +963,8 @@ const surveyQuestions = {
                 "Facilities",
                 "Housekeeping",
                 "Security",
-                "Administration"
+                "Administration",
+                "Food and Beverage"
               ]
             },
             {
@@ -1044,7 +1048,8 @@ const surveyQuestions = {
                 "Facilities",
                 "Housekeeping",
                 "Security",
-                "Administration"
+                "Administration",
+                "Food and Beverage"
               ]
             },
             {
