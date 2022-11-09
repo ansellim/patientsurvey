@@ -156,11 +156,24 @@ const surveyQuestions = {
           isRequired: true,
         },
         {
+          name: "Hospital",
+          title: "Hospital:",
+          type: "dropdown",
+          isRequired: true,
+          showNoneItem: false,
+          defaultValue: [
+            "ABC Hospital",
+          ],
+          "choices": [
+            "ABC Hospital",
+          ]
+        },
+        {
           name: "Ward",
           title: "Ward:",
           type: "dropdown",
           isRequired: true,
-          showNoneItem: true,
+          showNoneItem: false,
           "choices": [
             "A&E",
             "Business Office",
@@ -187,10 +200,11 @@ const surveyQuestions = {
           ]
         },
         {
-          name: "BedNumber",
+          name: "BedNumber1",
           title: "Bed number:",
           type: "dropdown",
           isRequired: true,
+          showNoneItem: false,
           "visibleIf": "{Ward}='Day Surgery' ",
           "choices": [
             "D-1",
@@ -206,10 +220,11 @@ const surveyQuestions = {
           ],
         },
         {
-          name: "BedNumber",
+          name: "BedNumber2",
           title: "Bed number:",
           type: "dropdown",
           isRequired: true,
+          showNoneItem: false,
           "visibleIf": "{Ward}='ICU'",
           "choices": [
             "I-1",
@@ -225,10 +240,11 @@ const surveyQuestions = {
           ],
         },
         {
-          name: "BedNumber",
+          name: "BedNumber3",
           title: "Bed number:",
           type: "dropdown",
           isRequired: true,
+          showNoneItem: false,
           "visibleIf": "{Ward}='Delivery Suites'",
           "choices": [
             "B-1",
@@ -244,10 +260,11 @@ const surveyQuestions = {
           ],
         },
         {
-          name: "BedNumber",
+          name: "BedNumber4",
           title: "Bed number:",
           type: "dropdown",
           isRequired: true,
+          showNoneItem: false,
           "visibleIf": "{Ward}='HDU'",
           "choices": [
             "H-1",
@@ -263,10 +280,11 @@ const surveyQuestions = {
           ],
         },
         {
-          name: "BedNumber",
+          name: "BedNumber5",
           title: "Bed number:",
           type: "dropdown",
           isRequired: true,
+          showNoneItem: false,
           "visibleIf": "{Ward}='NICU'",
           "choices": [
             "N-1",
@@ -282,10 +300,11 @@ const surveyQuestions = {
           ],
         },
         {
-          name: "BedNumber",
+          name: "BedNumber6",
           title: "Bed number:",
           type: "dropdown",
           isRequired: true,
+          showNoneItem: false,
           "visibleIf": "{Ward}='Ward 6 East'",
           "choices": [
             "6-1",
@@ -301,10 +320,11 @@ const surveyQuestions = {
           ],
         },
         {
-          name: "BedNumber",
+          name: "BedNumber7",
           title: "Bed number:",
           type: "dropdown",
           isRequired: true,
+          showNoneItem: false,
           "visibleIf": "{Ward}='Ward 6 West'",
           "choices": [
             "6-11",
@@ -320,10 +340,11 @@ const surveyQuestions = {
           ],
         },
         {
-          name: "BedNumber",
+          name: "BedNumber8",
           title: "Bed number:",
           type: "dropdown",
           isRequired: true,
+          showNoneItem: false,
           "visibleIf": "{Ward}='Ward 7 East'",
           "choices": [
             "7-1",
@@ -339,10 +360,11 @@ const surveyQuestions = {
           ],
         },
         {
-          name: "BedNumber",
+          name: "BedNumber9",
           title: "Bed number:",
           type: "dropdown",
           isRequired: true,
+          showNoneItem: false,
           "visibleIf": "{Ward}='Ward 7 West'",
           "choices": [
             "7-11",
@@ -358,10 +380,11 @@ const surveyQuestions = {
           ],
         },
         {
-          name: "BedNumber",
+          name: "BedNumber10",
           title: "Bed number:",
           type: "dropdown",
           isRequired: true,
+          showNoneItem: false,
           "visibleIf": "{Ward}='Ward 8 East'",
           "choices": [
             "8-1",
@@ -377,10 +400,11 @@ const surveyQuestions = {
           ],
         },
         {
-          name: "BedNumber",
+          name: "BedNumber11",
           title: "Bed number:",
           type: "dropdown",
           isRequired: true,
+          showNoneItem: false,
           "visibleIf": "{Ward}='Ward 8 West'",
           "choices": [
             "8-11",
@@ -396,10 +420,11 @@ const surveyQuestions = {
           ],
         },
         {
-          name: "BedNumber",
+          name: "BedNumber12",
           title: "Bed number:",
           type: "dropdown",
           isRequired: true,
+          showNoneItem: false,
           "choices": [
             "9-1",
             "9-2",
@@ -415,10 +440,11 @@ const surveyQuestions = {
           "visibleIf": "{Ward}='Ward 9 East'",
         },
         {
-          name: "BedNumber",
+          name: "BedNumber13",
           title: "Bed number:",
           type: "dropdown",
           isRequired: true,
+          showNoneItem: false,
           "choices": [
             "9-11",
             "9-12",
@@ -434,11 +460,11 @@ const surveyQuestions = {
           "visibleIf": "{Ward}='Ward 9 West'",
         },
         {
-          name: "BedNumber",
+          name: "BedNumber14",
           title: "Bed number:",
           type: "dropdown",
           isRequired: true,
-          showNoneItem: true,
+          showNoneItem: false,
           "choices": [
             "10-1",
             "10-2",
@@ -454,11 +480,11 @@ const surveyQuestions = {
           "visibleIf": "{Ward}='Ward 10 East'",
         },
         {
-          name: "BedNumber",
+          name: "BedNumber15",
           title: "Bed number:",
           type: "dropdown",
           isRequired: true,
-          showNoneItem: true,
+          showNoneItem: false,
           "choices": [
             "10-11",
             "10-12",

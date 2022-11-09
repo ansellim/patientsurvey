@@ -36,7 +36,21 @@ export const createFeedback = async (req, res) => {
   const {
     PatientFirstName,
     PatientLastName,
-    BedNumber,
+    BedNumber1,
+    BedNumber2,
+    BedNumber3,
+    BedNumber4,
+    BedNumber5,
+    BedNumber6,
+    BedNumber7,
+    BedNumber8,
+    BedNumber9,
+    BedNumber10,
+    BedNumber11,
+    BedNumber12,
+    BedNumber13,
+    BedNumber14,
+    BedNumber15,
     Ward,
     Hospital,
     FeedbackProviderFirstName,
@@ -95,8 +109,8 @@ export const createFeedback = async (req, res) => {
     doctorperformance5,
     doctorcomments5,
   } = req.body;
-  
-  //console.log("housekeeping:"+hospitality.housekeeping);
+
+  const finalbed = BedNumber1 ? BedNumber1 : BedNumber2 ? BedNumber2 : BedNumber3 ? BedNumber3 : BedNumber4 ? BedNumber4 : BedNumber5 ? BedNumber5 : BedNumber6 ? BedNumber6 : BedNumber7 ? BedNumber7 : BedNumber8 ? BedNumber8 : BedNumber9 ? BedNumber9 : BedNumber10 ? BedNumber10 : BedNumber11 ? BedNumber11 : BedNumber12 ? BedNumber12 : BedNumber13 ? BedNumber13 : BedNumber14 ? BedNumber14 : BedNumber15 ? BedNumber15 : 0;
   // Creating a new instance of the feedback model, using the
   // content of the request body.
   const newFeedback = new Feedback({
@@ -106,7 +120,7 @@ export const createFeedback = async (req, res) => {
       PatientLastName: PatientLastName,
       icNumber: "S7000000M", // hardcoded
       Gender: "M", // hardcoded
-      BedNumber: BedNumber,
+      BedNumber: finalbed,
       Ward: Ward,
       Hospital: Hospital, // hardcoded
     },
