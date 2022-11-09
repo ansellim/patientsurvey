@@ -704,12 +704,14 @@ const surveyQuestions = {
               title: "Staff Role:",
               "choices": [
                 "Nursing",
-                "Allied Health (therapist, radiographer, phlebotomist)",
+                "Allied Health (therapist, radiographer, phlebotomist, pharmacist)",
                 "Facilities",
                 "Housekeeping",
                 "Security",
                 "Administration",
-                "Food and Beverage"
+                "Food and Beverage",
+                "Business Office",
+                "Front Desk / Concierge",
               ]
             },
             {
@@ -789,12 +791,14 @@ const surveyQuestions = {
               title: "Staff Role:",
               "choices": [
                 "Nursing",
-                "Allied Health (therapist, radiographer, phlebotomist)",
+                "Allied Health (therapist, radiographer, phlebotomist, pharmacist)",
                 "Facilities",
                 "Housekeeping",
                 "Security",
                 "Administration",
-                "Food and Beverage"
+                "Food and Beverage",
+                "Business Office",
+                "Front Desk / Concierge",
               ]
             },
             {
@@ -874,12 +878,14 @@ const surveyQuestions = {
               title: "Staff Role:",
               "choices": [
                 "Nursing",
-                "Allied Health (therapist, radiographer, phlebotomist)",
+                "Allied Health (therapist, radiographer, phlebotomist, pharmacist)",
                 "Facilities",
                 "Housekeeping",
                 "Security",
                 "Administration",
                 "Food and Beverage", 
+                "Business Office",
+                "Front Desk / Concierge",
               ]
             },
             {
@@ -959,12 +965,14 @@ const surveyQuestions = {
               title: "Staff Role:",
               "choices": [
                 "Nursing",
-                "Allied Health (therapist, radiographer, phlebotomist)",
+                "Allied Health (therapist, radiographer, phlebotomist, pharmacist)",
                 "Facilities",
                 "Housekeeping",
                 "Security",
                 "Administration",
-                "Food and Beverage"
+                "Food and Beverage",
+                "Business Office",
+                "Front Desk / Concierge",
               ]
             },
             {
@@ -1044,12 +1052,14 @@ const surveyQuestions = {
               title: "Staff Role:",
               "choices": [
                 "Nursing",
-                "Allied Health (therapist, radiographer, phlebotomist)",
+                "Allied Health (therapist, radiographer, phlebotomist, pharmacist)",
                 "Facilities",
                 "Housekeeping",
                 "Security",
                 "Administration",
-                "Food and Beverage"
+                "Food and Beverage",
+                "Business Office",
+                "Front Desk / Concierge",
               ]
             },
             {
