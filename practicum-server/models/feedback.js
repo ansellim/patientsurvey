@@ -37,6 +37,7 @@ const surveySchema = mongoose.Schema({
     IncidentDate: Date,
     specificIncidentNature: String,
     specificIncident: String,
+    Status: String,
   },
   generalsurvey:{
     efficiencyrating:{

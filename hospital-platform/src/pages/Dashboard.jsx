@@ -12,6 +12,9 @@ import Grid from '@mui/material/Grid';
 
 import Placeholder from '../Placeholder'
 
+import {VerbatimFeedback} from "../components/cards/VerbatimFeedback";
+
+
 const DUMMY_DATA = {
   options: {
     chart: {
@@ -60,8 +63,12 @@ const Dashboard = () => {
           <h1 className="text-center text-2xl">The table here</h1>
         </main>
 
-        <aside className="col-span-5 md:col-span-2 p-10 bg-rose-300 row-span-4">
-          <h1 className="text-center text-2xl">Verbatim feedback display</h1>
+        <aside className="col-span-5 md:col-span-2 p-10 bg-rose-300 row-span-6">
+        <h1 className="text-center text-2xl text-black">
+          <Typography variant="h3">Verbatim</Typography>
+        </h1>
+        <VerbatimFeedback></VerbatimFeedback>
+          
         </aside>
 
         <footer className="col-span-5 md:col-span-2 p-10 bg-green-300 row-span-2">

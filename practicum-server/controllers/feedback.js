@@ -110,6 +110,7 @@ export const createFeedback = async (req, res) => {
     doctorcomments5,
   } = req.body;
 
+  console.log(specificIncidentNature);
   const finalbed = BedNumber1 ? BedNumber1 : BedNumber2 ? BedNumber2 : BedNumber3 ? BedNumber3 : BedNumber4 ? BedNumber4 : BedNumber5 ? BedNumber5 : BedNumber6 ? BedNumber6 : BedNumber7 ? BedNumber7 : BedNumber8 ? BedNumber8 : BedNumber9 ? BedNumber9 : BedNumber10 ? BedNumber10 : BedNumber11 ? BedNumber11 : BedNumber12 ? BedNumber12 : BedNumber13 ? BedNumber13 : BedNumber14 ? BedNumber14 : BedNumber15 ? BedNumber15 : 0;
   // Creating a new instance of the feedback model, using the
   // content of the request body.
@@ -137,6 +138,7 @@ export const createFeedback = async (req, res) => {
         IncidentDate: IncidentDate,
         specificIncidentNature: specificIncidentNature,
         specificIncident: specificIncident,
+        Status: specificIncidentNature == 'complaint' ? "Open" : "",
       },
       generalsurvey:{
         efficiencyrating:{
