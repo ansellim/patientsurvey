@@ -9,11 +9,11 @@ export default function GeneralCard(props) {
         <div>
           <Card variant="outlined">
 
-            <Typography variant="h4">{props.metricName}</Typography>
+            <Typography variant="h5">{props.metricName}</Typography>
 
-            Score: <Typography variant="h2">{props.score}%</Typography>
+            Score: <Typography variant="h3">{props.score}%</Typography>
 
-            Number of feedback items: <Typography variant="h2">{props.numFeedback}</Typography>
+            Number of feedback items: <Typography variant="h3">{props.numFeedback}</Typography>
 
           </Card>
         </div>

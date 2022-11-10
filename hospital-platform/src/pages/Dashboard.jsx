@@ -8,6 +8,8 @@ import { EfficiencyScore } from "../components/cards/EfficiencyScore";
 import { HospitalityScore } from "../components/cards/HospitalityScore";
 import { StaffScore } from "../components/cards/StaffScore";
 import { DoctorScore } from "../components/cards/DoctorScore";
+import { EfficiencyWaitingTime } from "../components/cards/EfficiencyWaitingTime";
+import { EfficiencyValueForMoney } from "../components/cards/EfficiencyValueForMoney";
 import Typography from '@mui/material/Typography';
 
 import Card from '@mui/material/Card';
@@ -17,6 +19,7 @@ import Grid from '@mui/material/Grid';
 import Placeholder from '../Placeholder'
 
 import {VerbatimFeedback} from "../components/cards/VerbatimFeedback";
+import { AverageHospitalityScore } from "../components/cards/AverageHospitalityScore";
 
 
 const DUMMY_DATA = {
@@ -48,7 +51,7 @@ const Dashboard = () => {
           <h1 className="text-center text-2xl text-white">
             <Typography variant="h3">Key Performance Indicators</Typography>
             
-            <Grid container rowSpacing={2}>
+            <Grid container rowSpacing={2} columnSpacing={2}>
 
               <Grid item lg={12}>
               <SatisfactionScore></SatisfactionScore>
@@ -56,6 +59,18 @@ const Dashboard = () => {
 
               <Grid item lg={12}>
                 <NetPromoterScore></NetPromoterScore>
+              </Grid>
+
+              <Grid item lg={4}>
+                <EfficiencyWaitingTime></EfficiencyWaitingTime>
+              </Grid>
+
+              <Grid item lg={4}>
+                <EfficiencyValueForMoney></EfficiencyValueForMoney>
+              </Grid>
+
+              <Grid item lg={4}>
+                <AverageHospitalityScore></AverageHospitalityScore>
               </Grid>
               
             </Grid>
