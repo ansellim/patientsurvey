@@ -65,7 +65,7 @@ const Dashboard = () => {
 
         <main className="col-span-5 md:col-span-2 p-10 bg-blue-200 h-full row-span-4">
         <h1 className="text-center text-2xl text-black">
-          <Typography variant="h3">Scores</Typography>
+          <Typography variant="h3">Category Scores</Typography>
           <Grid container rowSpacing={4}>
             <Grid item lg={6}>
             <EfficiencyScore></EfficiencyScore>
@@ -87,7 +87,7 @@ const Dashboard = () => {
 
         <aside className="col-span-5 md:col-span-2 p-10 bg-rose-300 row-span-6">
         <h1 className="text-center text-2xl text-black">
-          <Typography variant="h3">Verbatim</Typography>
+          <Typography variant="h3">Specific Verbatim</Typography>
         </h1>
         <VerbatimFeedback></VerbatimFeedback>
           
