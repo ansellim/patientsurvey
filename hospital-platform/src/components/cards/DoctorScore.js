@@ -15,7 +15,7 @@ export const DoctorScore = () => {
 
         for (let i = 0; i < feedbacks.length; i++) {
             const feedbackItem = feedbacks[i];
-s
+
            try {
             var totaldoctorentries =( feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorcourtesyrating1? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorcourtesyrating1=== 6? 0:1): 0) + (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorempathyrating1 ? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorempathyrating1===6?0:1): 0) + (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorexplanationrating1 ? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorexplanationrating1===6?0:1): 0 )+ (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorskillsrating1 ?  (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorskillsrating1===6?0:1) : 0)+ (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorprofessionalrating1 ?  (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorprofessionalrating1===6?0:1) : 0) + 
 

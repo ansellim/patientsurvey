@@ -9,7 +9,7 @@ export default function FeedbackCard(props) {
         <div>
             <Card variant="outlined">
             
-            <Typography variant="h6" style={{ marginLeft: '1rem' }}>Feedback {props.feedbackindex + 1} on {props.feedbackdate}:</Typography>
+            <Typography variant="h6" style={{ marginLeft: '1rem' }}>Feedback {props.feedbackindex + 1} on {props.feedbackdate} ({props.feedbacknature}):</Typography>
             <CardContent><Typography variant="h7">{props.feedbackitem}</Typography></CardContent>
 
           </Card>

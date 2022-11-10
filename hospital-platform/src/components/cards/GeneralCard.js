@@ -11,7 +11,7 @@ export default function GeneralCard(props) {
 
             <Typography variant="h4">{props.metricName}</Typography>
 
-            Score: <Typography variant="h2">{props.score}</Typography>
+            Score: <Typography variant="h2">{props.score}%</Typography>
 
             Number of feedback items: <Typography variant="h2">{props.numFeedback}</Typography>
 

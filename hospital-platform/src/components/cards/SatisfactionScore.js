@@ -36,7 +36,7 @@ export const SatisfactionScore = () => {
     return (
         <>
 
-            <GeneralCard metricName="Overall Satisfaction" score={Math.round(score.average_score * 100) / 100} numFeedback={score.num_feedbacks}></GeneralCard>
+            <GeneralCard metricName="Overall Satisfaction" score={Math.round(score.average_score * 100) / 10} numFeedback={score.num_feedbacks}></GeneralCard>
 
         </>
     )
