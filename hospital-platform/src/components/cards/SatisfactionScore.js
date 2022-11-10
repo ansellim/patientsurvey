@@ -16,7 +16,7 @@ export const SatisfactionScore = () => {
         for (let i = 0; i < feedbacks.length; i++) {
             const feedbackItem = feedbacks[i];
 
-            try {
+           try {
                 const satisfactionScore = feedbackItem.survey.overallrating.OverallSatisfaction;
                 satisfaction_scores = satisfaction_scores + satisfactionScore;
                 num_feedbacks = num_feedbacks + 1;
@@ -36,7 +36,7 @@ export const SatisfactionScore = () => {
     return (
         <>
 
-            <GeneralCard metricName="Overall Satisfaction" score={Math.round(score.average_score * 100) / 100} numFeedback={score.num_feedbacks}></GeneralCard>
+            <GeneralCard metricName="Overall Satisfaction" score={Math.round(score.average_score * 100) / 10} numFeedback={score.num_feedbacks}></GeneralCard>
 
         </>
     )

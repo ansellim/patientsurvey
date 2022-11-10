@@ -4,6 +4,10 @@ import ApexCharts from "apexcharts";
 import LineChart from "../components/charts/LineChart";
 import { SatisfactionScore } from "../components/cards/SatisfactionScore";
 import {NetPromoterScore} from "../components/cards/NetPromoterScore";
+import { EfficiencyScore } from "../components/cards/EfficiencyScore";
+import { HospitalityScore } from "../components/cards/HospitalityScore";
+import { StaffScore } from "../components/cards/StaffScore";
+import { DoctorScore } from "../components/cards/DoctorScore";
 import Typography from '@mui/material/Typography';
 
 import Card from '@mui/material/Card';
@@ -11,6 +15,9 @@ import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
 
 import Placeholder from '../Placeholder'
+
+import {VerbatimFeedback} from "../components/cards/VerbatimFeedback";
+
 
 const DUMMY_DATA = {
   options: {
@@ -57,14 +64,36 @@ const Dashboard = () => {
         </aside>
 
         <main className="col-span-5 md:col-span-2 p-10 bg-blue-200 h-full row-span-4">
-          <h1 className="text-center text-2xl">The table here</h1>
+        <h1 className="text-center text-2xl text-black">
+          <Typography variant="h3">Scores</Typography>
+          <Grid container rowSpacing={4}>
+            <Grid item lg={6}>
+            <EfficiencyScore></EfficiencyScore>
+            </Grid>
+            <Grid item lg={6}>
+            <HospitalityScore></HospitalityScore>
+            </Grid>
+            <Grid item lg={6}>
+            <StaffScore></StaffScore>
+            </Grid>
+            <Grid item lg={6}>
+            <DoctorScore></DoctorScore>
+            </Grid>
+          </Grid>
+
+        </h1>
+
         </main>
 
-        <aside className="col-span-5 md:col-span-2 p-10 bg-rose-300 row-span-4">
-          <h1 className="text-center text-2xl">Verbatim feedback display</h1>
+        <aside className="col-span-5 md:col-span-2 p-10 bg-rose-300 row-span-6">
+        <h1 className="text-center text-2xl text-black">
+          <Typography variant="h3">Verbatim</Typography>
+        </h1>
+        <VerbatimFeedback></VerbatimFeedback>
+          
         </aside>
 
-        <footer className="col-span-5 md:col-span-2 p-10 bg-green-300 row-span-2">
+        <footer className="col-span-5 md:col-span-4 p-10 bg-green-300 row-span-2">
           <h1 className="text-center text-2xl">
             Suyash will add the graphs here.
           </h1>
