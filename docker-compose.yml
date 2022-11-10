@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+  survey-app:
+    image: node:current-alpine3.15
+    command: sh -c "npm install && npm start"
+    ports:
+      - 3000:3000
+    expose:
+      - 3000
+    working_dir: /survey-app
+    volumes:
+      - ./survey-app:/survey-app
+  practicum-server:
+    image: node:current-alpine3.15
+    command: sh -c "npm install && npm run start"
+    ports: 
+      - 3006:3006
+    expose:
+      - 3006
+    working_dir: /practicum-server
+    volumes:
+      - ./practicum-server:/practicum-server
+  hospital-platform:
+    image: node:current-alpine3.15
+    command: sh -c "npm install && npm start"
+    ports:
+      - 4200:4200
+    expose:
+      - 4200
+    working_dir: /hospital-platform
+    volumes:
+      - ./hospital-platform:/hospital-platform

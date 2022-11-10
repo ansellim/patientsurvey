@@ -24,4 +24,14 @@ The project is a full-stack web application consisting of three modules:
 
 # Getting Started
 
-(to be written)
+1. Install Docker (for Linux users, install Docker Compose)
+
+2. Run `docker-compose up` to start up the containers.
+
+3. Access the modules:
+
+a) Front-end patient feedback portal: http://localhost:3000
+
+b) Back-end server: http://localhost:3006
+
+c) Front-end dashboard app for hospital administrators: http://localhost:4200
