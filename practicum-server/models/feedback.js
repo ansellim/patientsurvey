@@ -68,7 +68,7 @@ const surveySchema = mongoose.Schema({
         staffskillsrating1: Number,
         staffprofessionalrating1: Number,
       },
-      staffcomments1: String,
+      staffcomment1: String,
       staffName2: String,
       staffRole2: String,
       staffperformance2:{
@@ -78,7 +78,7 @@ const surveySchema = mongoose.Schema({
         staffskillsrating2: Number,
         staffprofessionalrating2: Number,
       },
-      staffcomments2: String,
+      staffcomment2: String,
       staffName3: String,
       staffRole3: String,
       staffperformance3:{
@@ -88,7 +88,7 @@ const surveySchema = mongoose.Schema({
         staffskillsrating3: Number,
         staffprofessionalrating3: Number,
       },
-      staffcomments3: String,
+      staffcomment3: String,
       staffName4: String,
       staffRole4: String,
       staffperformance4:{
@@ -98,7 +98,7 @@ const surveySchema = mongoose.Schema({
         staffskillsrating4: Number,
         staffprofessionalrating4: Number,
       },
-      staffcomments4: String,
+      staffcomment4: String,
       staffName5: String,
       staffRole5: String,
       staffperformance5:{
@@ -108,7 +108,7 @@ const surveySchema = mongoose.Schema({
         staffskillsrating5: Number,
         staffprofessionalrating5: Number,
       },
-      staffcomments5: String,
+      staffcomment5: String,
     },
     doctorrating:{
       doctorName1: String,
@@ -120,7 +120,7 @@ const surveySchema = mongoose.Schema({
         doctorskillsrating1: Number,
         professionalrating1: Number,
       },
-      doctorcomments1: String,
+      doctorcomment1: String,
       doctorName2: String,
       doctorRole2: String,
       doctorperformance2:{
@@ -130,7 +130,7 @@ const surveySchema = mongoose.Schema({
         doctorskillsrating2: Number,
         doctorprofessionalrating2: Number,
       },
-      doctorcomments2: String,
+      doctorcomment2: String,
       doctorName3: String,
       doctorRole3: String,
       doctorperformance3:{
@@ -140,7 +140,7 @@ const surveySchema = mongoose.Schema({
         doctorskillsrating3: Number,
         doctorprofessionalrating3: Number,
       },
-      doctorcomments3: String,
+      doctorcomment3: String,
       doctorName4: String,
       doctorRole4: String,
       doctorperformance4:{
@@ -150,7 +150,7 @@ const surveySchema = mongoose.Schema({
         doctorskillsrating4: Number,
         doctorprofessionalrating4: Number,
       },
-      doctorcomments4: String,
+      doctorcomment4: String,
       doctorName5: String,
       doctorRole5: String,
       doctorperformance5:{
@@ -160,7 +160,7 @@ const surveySchema = mongoose.Schema({
         doctorskillsrating5: Number,
         doctorprofessionalrating5: Number,
       },
-      doctorcomments5: String,
+      doctorcomment5: String,
     },
   },
   overallrating:{

@@ -71,46 +71,46 @@ export const createFeedback = async (req, res) => {
     staffperformance1,
     staffName1,
     staffRole1,
-    staffcomments1,
+    staffcomment1,
     staffperformance2,
     staffName2,
     staffRole2,
-    staffcomments2,
+    staffcomment2,
     staffName3,
     staffRole3,
     staffperformance3,
-    staffcomments3,
+    staffcomment3,
     staffName4,
     staffRole4,
     staffperformance4,
-    staffcomments4,
+    staffcomment4,
     staffName5,
     staffRole5,
     staffperformance5,
-    staffcomments5,
+    staffcomment5,
     doctorName1,
     doctorRole1,
     doctorperformance1,
-    doctorcomments1,
+    doctorcomment1,
     doctorName2,
     doctorRole2,
     doctorperformance2,
-    doctorcomments2,
+    doctorcomment2,
     doctorName3,
     doctorRole3,
     doctorperformance3,
-    doctorcomments3,
+    doctorcomment3,
     doctorName4,
     doctorRole4,
     doctorperformance4,
-    doctorcomments4,
+    doctorcomment4,
     doctorName5,
     doctorRole5,
     doctorperformance5,
-    doctorcomments5,
+    doctorcomment5,
   } = req.body;
 
-  console.log(specificIncidentNature);
+  console.log(staffcomment1);
   const finalbed = BedNumber1 ? BedNumber1 : BedNumber2 ? BedNumber2 : BedNumber3 ? BedNumber3 : BedNumber4 ? BedNumber4 : BedNumber5 ? BedNumber5 : BedNumber6 ? BedNumber6 : BedNumber7 ? BedNumber7 : BedNumber8 ? BedNumber8 : BedNumber9 ? BedNumber9 : BedNumber10 ? BedNumber10 : BedNumber11 ? BedNumber11 : BedNumber12 ? BedNumber12 : BedNumber13 ? BedNumber13 : BedNumber14 ? BedNumber14 : BedNumber15 ? BedNumber15 : 0;
   // Creating a new instance of the feedback model, using the
   // content of the request body.
@@ -169,7 +169,7 @@ export const createFeedback = async (req, res) => {
             staffskillsrating1:staffperformance1?staffperformance1.staffskillsrating1:0,
             staffprofessionalrating1:staffperformance1?staffperformance1.staffprofessionalrating1:0,
           },
-          staffcomments1:staffcomments1,
+          staffcomment1:staffcomment1,
           staffName2:staffName2,
           staffRole2:staffRole2,
           staffperformance2:{
@@ -179,7 +179,7 @@ export const createFeedback = async (req, res) => {
             staffskillsrating2:staffperformance2 ? staffperformance2.staffskillsrating2:0,
             staffprofessionalrating2:staffperformance2 ? staffperformance2.staffprofessionalrating2:0,
           },
-          staffcomments2:staffcomments2,
+          staffcomment2:staffcomment2,
           staffName3:staffName3,
           staffRole3:staffRole3,
           staffperformance3:{
@@ -189,7 +189,7 @@ export const createFeedback = async (req, res) => {
             staffskillsrating3:staffperformance3 ? staffperformance3.staffskillsrating3:0,
             staffprofessionalrating3:staffperformance3 ? staffperformance3.staffprofessionalrating3:0,
           },
-          staffcomments3:staffcomments3,
+          staffcomment3:staffcomment3,
           staffName4:staffName4,
           staffRole4:staffRole4,
           staffperformance4:{
@@ -199,7 +199,7 @@ export const createFeedback = async (req, res) => {
             staffskillsrating4:staffperformance4 ? staffperformance4.staffskillsrating4:0,
             staffprofessionalrating4:staffperformance4 ? staffperformance4.staffprofessionalrating4:0,
           },
-          staffcomments4:staffcomments4,
+          staffcomment4:staffcomment4,
           staffName5:staffName5,
           staffRole5:staffRole5,
           staffperformance5:{
@@ -209,7 +209,7 @@ export const createFeedback = async (req, res) => {
             staffskillsrating5:staffperformance5 ? staffperformance5.staffskillsrating5:0,
             staffprofessionalrating5:staffperformance5 ? staffperformance5.staffprofessionalrating5:0,
           },
-          staffcomments5:staffcomments5,
+          staffcomment5:staffcomment5,
         },
         doctorrating:{
           doctorName1:doctorName1,
@@ -221,7 +221,7 @@ export const createFeedback = async (req, res) => {
             doctorskillsrating1:doctorperformance1 ? doctorperformance1.doctorskillsrating1:0,
             doctorprofessionalrating1:doctorperformance1 ? doctorperformance1.doctorprofessionalrating1:0,
           },
-          doctorcomments1:doctorcomments1,
+          doctorcomment1:doctorcomment1,
           doctorName2:doctorName2,
           doctorRole2:doctorRole2,
           doctorperformance2:{
@@ -231,7 +231,7 @@ export const createFeedback = async (req, res) => {
             doctorskillsrating2:doctorperformance2 ? doctorperformance2.doctorskillsrating2:0,
             doctorprofessionalrating2:doctorperformance2 ? doctorperformance2.doctorprofessionalrating2:0,
           },
-          doctorcomments2:doctorcomments2,
+          doctorcomment2:doctorcomment2,
           doctorName3:doctorName3,
           doctorRole3:doctorRole3,
           doctorperformance3:{
@@ -241,7 +241,7 @@ export const createFeedback = async (req, res) => {
             doctorskillsrating3:doctorperformance3 ? doctorperformance3.doctorskillsrating3:0,
             doctorprofessionalrating3:doctorperformance3 ? doctorperformance3.doctorprofessionalrating3:0,
           },
-          doctorcomments3:doctorcomments3,
+          doctorcomment3:doctorcomment3,
           doctorName4:doctorName4,
           doctorRole4:doctorRole4,
           doctorperformance4:{
@@ -251,7 +251,7 @@ export const createFeedback = async (req, res) => {
             doctorskillsrating4:doctorperformance4 ? doctorperformance4.doctorskillsrating4:0,
             doctorprofessionalrating4:doctorperformance4 ? doctorperformance4.doctorprofessionalrating4:0,
           },
-          doctorcomments4:doctorcomments4,
+          doctorcomment4:doctorcomment4,
           doctorName5:doctorName5,
           doctorRole5:doctorRole5,
           doctorperformance5:{
@@ -261,7 +261,7 @@ export const createFeedback = async (req, res) => {
             doctorskillsrating5:doctorperformance5 ? doctorperformance5.doctorskillsrating5:0,
             doctorprofessionalrating5:doctorperformance5 ? doctorperformance5.doctorprofessionalrating5:0,
           },
-          doctorcomments5:doctorcomments5,
+          doctorcomment5:doctorcomment5,
         }
       },
       overallrating:{
