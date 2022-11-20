@@ -4,11 +4,12 @@ import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { Sidebar } from "./components";
 
-import { Dashboard, Opentickets, Employees, Login } from "./pages";
+import { Dashboard, Opentickets, Employees, Wordcloud, Login } from "./pages";
 
 import "./App.css";
 
-import { useEffect, useState } from "react";
+import { useEffect , useState} from "react";
+
 import { getFeedbackItems } from "./actions/feedbackItems";
 
 import {
@@ -25,6 +26,7 @@ import useToken from "./hooks/useToken";
 
 const App = () => {
   const { token, setToken } = useToken();
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -72,6 +74,9 @@ const App = () => {
 
               {/* Navigating to Employees page */}
               <Route path="/employees" element={<Employees />} />
+
+              {/* Navigating to Employees page */}
+              <Route path="/wordcloud" element={<Wordcloud />} />
             </Routes>
           </div>
         </div>
