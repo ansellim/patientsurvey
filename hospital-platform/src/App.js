@@ -4,11 +4,12 @@ import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { Sidebar } from "./components";
 
-import { Dashboard, Opentickets, Employees, Wordcloud } from "./pages";
+import { Dashboard, Opentickets, Employees, Wordcloud, Login } from "./pages";
 
 import "./App.css";
 
-import { useEffect } from "react";
+import { useEffect , useState} from "react";
+
 import { getFeedbackItems } from "./actions/feedbackItems";
 
 import {
@@ -21,15 +22,22 @@ import {
 } from "@mui/material";
 
 import { useDispatch } from "react-redux";
-
-//import {SatisfactionScore} from './components/cards/SatisfactionScore';
+import useToken from "./hooks/useToken";
 
 const App = () => {
+  const { token, setToken } = useToken();
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getFeedbackItems());
   }, [dispatch]);
+
+  console.log(token);
+
+  if (!token) {
+    return <Login setToken={setToken}></Login>;
+  }
 
   // const { activeMenu } = useStateContext();
   const activeMenu = true;
