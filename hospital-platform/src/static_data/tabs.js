@@ -37,6 +37,11 @@ export const links = [
         link: "employees",
         icon: <IoMdContacts />,
       },
+      {
+        name: "Wordcloud",
+        link: "wordcloud",
+        icon: <IoMdContacts />,
+      },
     ],
   },
 ];
