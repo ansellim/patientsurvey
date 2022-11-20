@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import feedbackRoutes from "./routes/feedback.js";
+import loginRoute from "./routes/login.js";
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({ limit: "1mb", extended: true }));
 // router imported starts with the /feedback path
 // should be placed after app.use(cors())
 app.use("/feedback", feedbackRoutes);
+app.use("/login", loginRoute);
 
 // Connection URL username and password should be hidden inside .env file when deploying.
 const CONNECTION_URL =
