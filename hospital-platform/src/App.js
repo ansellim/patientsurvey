@@ -4,28 +4,32 @@ import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { Sidebar } from "./components";
 
-import { Dashboard, Opentickets, Employees } from "./pages";
+import { Dashboard, Opentickets, Employees, Wordcloud } from "./pages";
 
 import "./App.css";
 
+import { useEffect } from "react";
+import { getFeedbackItems } from "./actions/feedbackItems";
 
-import {useEffect} from 'react';
-import {getFeedbackItems} from "./actions/feedbackItems";
+import {
+  Box,
+  Container,
+  Grid,
+  Card,
+  CardContent,
+  Typography,
+} from "@mui/material";
 
-import { Box, Container, Grid, Card, CardContent, Typography } from '@mui/material';
-
-import {useDispatch} from 'react-redux';
+import { useDispatch } from "react-redux";
 
 //import {SatisfactionScore} from './components/cards/SatisfactionScore';
 
-
 const App = () => {
-
   const dispatch = useDispatch();
 
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(getFeedbackItems());
-  },[dispatch]);
+  }, [dispatch]);
 
   // const { activeMenu } = useStateContext();
   const activeMenu = true;
@@ -62,6 +66,9 @@ const App = () => {
 
               {/* Navigating to Employees page */}
               <Route path="/employees" element={<Employees />} />
+
+              {/* Navigating to Employees page */}
+              <Route path="/wordcloud" element={<Wordcloud />} />
             </Routes>
           </div>
         </div>
