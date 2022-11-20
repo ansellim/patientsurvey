@@ -1,28 +1,43 @@
 import React from "react";
 import Chart from "react-apexcharts";
-import ApexCharts from "apexcharts";
 
-const DUMMY_DATA = {
-  options: {
+const LineChart = ({ series, title }) => {
+  const options = {
     chart: {
-      id: "basic-bar",
+      type: "area",
+      background: "#eff4f7",
+      sparkline: {
+        enabled: true,
+      },
     },
-    xaxis: {
-      categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+    grid: {
+      borderColor: "#555",
+      clipMarkers: false,
+      yaxis: {
+        lines: {
+          show: false,
+        },
+      },
     },
-  },
-  series: [
-    {
-      name: "series-1",
-      data: [30, 40, 45, 50, 49, 60, 70, 91],
+    fill: {
+      type: "solid",
+      opacity: 1,
     },
-  ],
-};
-
-const LineChart = ({ series, options }) => {
+    stroke: {
+      curve: "straight",
+    },
+    toolbar: {
+      show: true,
+    },
+    title: { text: title },
+    offsetX: -30,
+    offsetY: 100,
+    align: "right",
+    colors: ["#00BAEC"],
+  };
   return (
     <div>
-      <Chart type="area" width="500" series={series} options={options}></Chart>
+      <Chart series={series} options={options}></Chart>
     </div>
   );
 };
