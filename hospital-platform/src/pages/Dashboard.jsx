@@ -103,7 +103,7 @@ const Dashboard = () => {
           {/* This div will be a 3x2 grid for the graphs */}
           <div>
             <LineChart
-              series={vfmRating}
+              series={DUMMY_DATA.series}
               title="Value for Money Rating over Time"
             />
           </div>
