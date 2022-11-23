@@ -10,7 +10,7 @@ const Login = ({ setToken }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = await loginUser({ username, password });
-    console.log(token);
+   // console.log(token);
     setToken(token);
   };
 

@@ -15,14 +15,21 @@ export async function loginUser(credentials) {
   } catch (error) {
     console.log(error);
   }
+}
 
-  //   axios
-  //     .post(url + "/login", { body: JSON.stringify(credentials) })
-  //     .then((response) => {
-  //       console.log(response.data);
-  //       return response.data;
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
+export async function saveTicket(statusticket){
+  try{
+    //console.log(statusticket);
+    // const { data: response } = await axios.post(url + "/login", {
+    //   body: JSON.stringify(statusticket.ticketstatus, ticketId), 
+    //}); //use data destructuring to get data from the promise object
+    //return response;
+    const { data: response } = await axios.post(url + "/updateticket", {
+      body: JSON.stringify(statusticket), 
+    });
+    return response;
+  }catch(error){
+    console.log(error);
+  }
+
 }

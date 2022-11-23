@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import feedbackRoutes from "./routes/feedback.js";
 import loginRoute from "./routes/login.js";
-
+import updateticketRoute from "./routes/updateticket.js"
 const app = express();
 
 // Using cors. It allows us to relax the security applied to an API.
@@ -25,6 +25,7 @@ app.use(bodyParser.urlencoded({ limit: "1mb", extended: true }));
 // should be placed after app.use(cors())
 app.use("/feedback", feedbackRoutes);
 app.use("/login", loginRoute);
+app.use("/updateticket",updateticketRoute);
 
 // Connection URL username and password should be hidden inside .env file when deploying.
 const CONNECTION_URL =

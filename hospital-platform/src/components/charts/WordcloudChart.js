@@ -93,7 +93,7 @@ export const WordcloudChart = () => {
 
     const topWordsAsObjects = topWords.map(([a,b]) => {return {text: a, value: parseInt(b)}} )
 
-    console.log(topWordsAsObjects)
+    //console.log(topWordsAsObjects)
 
     return { data: topWordsAsObjects };
   });
