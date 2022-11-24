@@ -12,13 +12,33 @@ import { DoctorProfessionalScore } from "../components/cards/DoctorProfScore";
 import { DoctorExplanationScore } from "../components/cards/DoctorExplanationScore";
 import { DoctorEmpathyScore } from "../components/cards/DoctorEmpathyScore";
 import { DoctorCourtesyScore } from "../components/cards/DoctorCourtesyScore";
+import { StaffScore } from "../components/cards/StaffScore";
+import { DoctorScore } from "../components/cards/DoctorScore";
+import { useState } from "react";
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import { TotalSkillScore } from "../components/cards/TotalSkillScore";
+import { TotalProfessionalScore } from "../components/cards/TotalProfScore";
+import { TotalExplanationScore } from "../components/cards/TotalExplanationScore";
+import { TotalEmpathyScore } from "../components/cards/TotalEmpathyScore";
+import { TotalCourtesyScore } from "../components/cards/TotalCourtesyScore";
+import LineChart from "../components/charts/LineChart";
+import { EmployeeScore } from "../components/cards/EmployeeScore";
+
+const DUMMY_DATA = {
+  series: [
+    {
+      name: "series-1",
+      data: [30, 40, 45, 50, 49, 60, 70, 91],
+    },
+  ],
+};
 const Employees = () => {
   const hospitaloptions = [
     'ABCHospital'
   ];
   const departmentoptions = [
+    "All",
     "A&E",
     "Business Office",
     "Day Surgery",
@@ -43,25 +63,29 @@ const Employees = () => {
     "Ward 10 West",
   ];
 
-  const dateoptions = [
-    'Jan 2019', 'Feb 2019', 'Mar 2019', 'Apr 2019', 'May 2019', 'Jun 2019', 'Jul 2019', 'Aug 2019', 'Sep 2019', 'Oct 2019', 'Nov 2019', 'Dec 2019',
-    'Jan 2020', 'Feb 2020', 'Mar 2020', 'Apr 2020', 'May 2020', 'Jun 2020', 'Jul 2020', 'Aug 2020', 'Sep 2020', 'Oct 2020', 'Nov 2020', 'Dec 2020', 
-  ]
+  const dateoptions = ["All",
+    '2019',"2020","2021","2022"  ]
   const defaulthospOption = hospitaloptions[0];
   const defaultdeptOption = departmentoptions[0];
   const defaultdatepOption = dateoptions[0];
+  const [hospitalfilterval, setHospitalFilterVal] = useState("ABCHospital");
+  const [departmentfilterval, setDepartmentfilterval] = useState("All");
+  const [datefilterval, setDatefilterval] = useState("All");
   const selectFilterHandler1 =(event) =>{
-    console.log(event);
+    setHospitalFilterVal(event.value);
+    
   }
   const selectFilterHandler2 =(event) =>{
-    console.log(event);
+    setDepartmentfilterval(event.value);
+    
   }
   const selectFilterHandler3 =(event) =>{
-    console.log(event);
+    setDatefilterval(event.value);
+    
   }
 
   return (
-    <div className=" grid grid-cols-6 h-screen grid-rows-1">
+    <div className=" grid grid-cols-6 grid-rows-1">
       <header className="col-span-6 p-10 bg-amber-200 row-span-1">
       <Typography variant="h5"><b>Filters</b></Typography>
       <Grid container rowSpacing={2} columnSpacing={2}>
@@ -77,40 +101,72 @@ const Employees = () => {
             </Grid>
 
             <Grid item lg={2}>
-            <Typography variant="h6">Time Period</Typography>
+            <Typography variant="h6">Time Period (Verbatim only)</Typography>
             <Dropdown options={dateoptions} onChange={selectFilterHandler3} value={defaultdatepOption} placeholder="Select an option" />
             </Grid>
           </Grid>
         
       </header>
 
-      <aside className="col-span-5 md:col-span-2 p-10 bg-gray-700 row-span-2">
+      <aside className="col-span-5 md:col-span-2 p-10 bg-gray-700 row-span-1">
         <h1 className="text-center text-2xl text-white">
-          Ansel's cards in this div.
+        <Typography variant="h5"><b>Employee Key Performance Indicators</b></Typography>
+        <Typography variant="h6">Overall Scores</Typography>
+        <Grid container rowSpacing={2} columnSpacing={2}>
+        
+            <Grid item lg={12}>
+              <EmployeeScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></EmployeeScore>
+            </Grid>
+            <Grid item lg={6}>
+              <StaffScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></StaffScore>
+            </Grid>
+            <Grid item lg={6}>
+              <DoctorScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></DoctorScore>
+            </Grid>
+
+          </Grid><br/>
+          <Typography variant="h6">Sub-Scores</Typography>
+          <Grid container rowSpacing={2} columnSpacing={2}>
+            <Grid item lg={6}>
+              <TotalSkillScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></TotalSkillScore>
+            </Grid>
+            <Grid item lg={6}>
+              <TotalProfessionalScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></TotalProfessionalScore>
+            </Grid>
+            <Grid item lg={6}>
+              <TotalExplanationScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></TotalExplanationScore>
+            </Grid>
+            <Grid item lg={6}>
+              <TotalEmpathyScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></TotalEmpathyScore>
+            </Grid>
+            <Grid item lg={6}>
+              <TotalCourtesyScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></TotalCourtesyScore>
+            </Grid>
+      </Grid>
         </h1>
       </aside>
 
-      <main className="col-span-4 md:col-span-2 p-10 bg-blue-200 h-full row-span-5">
-      <h1 className="text-center text-2xl text-black">
-      <Typography variant="h5"><b>Employee Scores</b></Typography>
+      <main className="col-span-5 md:col-span-2 p-10 bg-blue-200 h-full row-span-1">
+        <h1 className="text-center text-2xl text-black">
+      <Typography variant="h5"><b>Employee Category Scores</b></Typography>
         </h1>
         <h1 className="text-center text-2xl text-black">
         <Typography variant="h6"><b>Staff Scores</b></Typography>
           <Grid container  rowSpacing={2} columnSpacing={3}>
             <Grid item md={4}>
-              <StaffSkillScore></StaffSkillScore>
+              <StaffSkillScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></StaffSkillScore>
             </Grid>
             <Grid item md={4}>
-              <StaffProfessionalScore></StaffProfessionalScore>
+              <StaffProfessionalScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></StaffProfessionalScore>
             </Grid>
             <Grid item md={4}>
-              <StaffExplanationScore></StaffExplanationScore>
+              <StaffExplanationScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></StaffExplanationScore>
             </Grid>
             <Grid item md={4}>
-              <StaffEmpathyScore></StaffEmpathyScore>
+              <StaffEmpathyScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></StaffEmpathyScore>
             </Grid>
             <Grid item md={4}>
-              <StaffCourtesyScore></StaffCourtesyScore>
+              <StaffCourtesyScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></StaffCourtesyScore>
             </Grid>
           </Grid>
         </h1>
@@ -119,19 +175,19 @@ const Employees = () => {
         <Typography variant="h6"><b>Doctor Scores</b></Typography>
           <Grid container rowSpacing={2} columnSpacing={3}>
             <Grid item md={4}>
-              <DoctorSkillScore></DoctorSkillScore>
+              <DoctorSkillScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></DoctorSkillScore>
             </Grid>
             <Grid item md={4}>
-              <DoctorProfessionalScore></DoctorProfessionalScore>
+              <DoctorProfessionalScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></DoctorProfessionalScore>
             </Grid>
             <Grid item md={4}>
-              <DoctorExplanationScore></DoctorExplanationScore>
+              <DoctorExplanationScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></DoctorExplanationScore>
             </Grid>
             <Grid item md={4}>
-              <DoctorEmpathyScore></DoctorEmpathyScore>
+              <DoctorEmpathyScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></DoctorEmpathyScore>
             </Grid>
             <Grid item md={4}>
-              <DoctorCourtesyScore></DoctorCourtesyScore>
+              <DoctorCourtesyScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></DoctorCourtesyScore>
             </Grid>
           </Grid>
         </h1>
@@ -141,14 +197,33 @@ const Employees = () => {
       <h1 className="text-center text-2xl text-black">
       <Typography variant="h5"><b>Employee Verbatim</b></Typography>
         </h1>
-        <VerbatimEmployee></VerbatimEmployee>
+        <VerbatimEmployee hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></VerbatimEmployee>
       </aside>
 
-      <footer className="col-span-5 md:col-span-2 p-10 bg-green-300 row-span-2">
+      {/* <footer className="col-span-5 md:col-span-2 p-10 bg-green-300 row-span-2">
         <h1 className="text-center text-2xl">
           Suyash will add the graphs here.
         </h1>
-      </footer>
+        
+      </footer> */}
+       <aside className="col-span-5 md:col-span-4 p-10 row-span-2">
+      <h1 className="text-center text-2xl text-black">
+        <Typography variant="h5"><b>Charts</b></Typography>
+        </h1>
+        <div className="text-center text-2xl grid grid-cols-2 grid-rows-3 gap-3">
+          {/* This div will be a 3x2 grid for the graphs */}
+          <div>
+            <LineChart
+              series={DUMMY_DATA.series}
+              title="Value for Money Rating over Time"
+            />
+          </div>
+          <div>
+            {/*JSON.stringify(graph_data)*/}
+            <LineChart series={DUMMY_DATA.series} title="Title 6" />
+          </div>
+        </div>
+      </aside>
     </div>
   );
 };

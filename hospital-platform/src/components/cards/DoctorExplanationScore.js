@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import SmallCard from './SmallCard';
 
-export const DoctorExplanationScore = () => {
+export const DoctorExplanationScore = (props) => {
 
     const score = useSelector((state) => {
 
@@ -17,31 +17,62 @@ export const DoctorExplanationScore = () => {
             const feedbackItem = feedbacks[i];
 
            try {
-            var totaldoctorentries = (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorexplanationrating1 ?  (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorexplanationrating1===6?0:1) : 0) + 
+            if(props.departmentfilterval !== "All"){
+                if(feedbackItem.Patient.Ward === props.departmentfilterval){
+                    var totaldoctorentries = (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorexplanationrating1 ?  (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorexplanationrating1===6?0:1) : 0) + 
 
-            (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance2.doctorexplanationrating2 ?  (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance2.doctorexplanationrating2===6?0:1) : 0)+ 
+                    (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance2.doctorexplanationrating2 ?  (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance2.doctorexplanationrating2===6?0:1) : 0)+ 
+        
+                    (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance3.doctorexplanationrating3 ?  (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance3.doctorexplanationrating3===6?0:1) : 0)+ 
+        
+                    (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance4.doctorexplanationrating4 ?  (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance4.doctorexplanationrating4===6?0:1) : 0)+ 
+        
+                    (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance5.doctorexplanationrating5 ?  (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance5.doctorexplanationrating5===6?0:1) : 0);
+                    
+                    var doctorScore = 0;
+                    totaldoctorentries === 0 ? doctorScore = 0 :  doctorScore = Math.round(((feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorexplanationrating1 ? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorexplanationrating1=== 6? 0:feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorexplanationrating1) : 0)
+        
+                    +(feedbackItem.survey.generalsurvey.doctorrating.doctorperformance2.doctorexplanationrating2 ? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance2.doctorexplanationrating2=== 6? 0:feedbackItem.survey.generalsurvey.doctorrating.doctorperformance2.doctorexplanationrating2) : 0)
+        
+                    +(feedbackItem.survey.generalsurvey.doctorrating.doctorperformance3.doctorexplanationrating3 ? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance3.doctorexplanationrating3=== 6? 0:feedbackItem.survey.generalsurvey.doctorrating.doctorperformance3.doctorexplanationrating3) : 0)
+        
+                    +(feedbackItem.survey.generalsurvey.doctorrating.doctorperformance4.doctorexplanationrating4 ? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance4.doctorexplanationrating4=== 6? 0:feedbackItem.survey.generalsurvey.doctorrating.doctorperformance4.doctorexplanationrating4) : 0)
+        
+                    +(feedbackItem.survey.generalsurvey.doctorrating.doctorperformance5.doctorexplanationrating5 ? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance5.doctorexplanationrating5=== 6? 0:feedbackItem.survey.generalsurvey.doctorrating.doctorperformance5.doctorexplanationrating5) : 0)
+        
+                    )/(totaldoctorentries)*100)/100;
+                    doctor_scores = doctor_scores + doctorScore;
+        
+                        if (totaldoctorentries !== 0) num_feedbacks =num_feedbacks + 1;
+                }
+            } else{
+                var totaldoctorentries = (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorexplanationrating1 ?  (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorexplanationrating1===6?0:1) : 0) + 
 
-            (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance3.doctorexplanationrating3 ?  (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance3.doctorexplanationrating3===6?0:1) : 0)+ 
-
-            (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance4.doctorexplanationrating4 ?  (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance4.doctorexplanationrating4===6?0:1) : 0)+ 
-
-            (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance5.doctorexplanationrating5 ?  (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance5.doctorexplanationrating5===6?0:1) : 0);
+                (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance2.doctorexplanationrating2 ?  (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance2.doctorexplanationrating2===6?0:1) : 0)+ 
+    
+                (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance3.doctorexplanationrating3 ?  (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance3.doctorexplanationrating3===6?0:1) : 0)+ 
+    
+                (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance4.doctorexplanationrating4 ?  (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance4.doctorexplanationrating4===6?0:1) : 0)+ 
+    
+                (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance5.doctorexplanationrating5 ?  (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance5.doctorexplanationrating5===6?0:1) : 0);
+                
+                var doctorScore = 0;
+                totaldoctorentries === 0 ? doctorScore = 0 :  doctorScore = Math.round(((feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorexplanationrating1 ? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorexplanationrating1=== 6? 0:feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorexplanationrating1) : 0)
+    
+                +(feedbackItem.survey.generalsurvey.doctorrating.doctorperformance2.doctorexplanationrating2 ? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance2.doctorexplanationrating2=== 6? 0:feedbackItem.survey.generalsurvey.doctorrating.doctorperformance2.doctorexplanationrating2) : 0)
+    
+                +(feedbackItem.survey.generalsurvey.doctorrating.doctorperformance3.doctorexplanationrating3 ? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance3.doctorexplanationrating3=== 6? 0:feedbackItem.survey.generalsurvey.doctorrating.doctorperformance3.doctorexplanationrating3) : 0)
+    
+                +(feedbackItem.survey.generalsurvey.doctorrating.doctorperformance4.doctorexplanationrating4 ? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance4.doctorexplanationrating4=== 6? 0:feedbackItem.survey.generalsurvey.doctorrating.doctorperformance4.doctorexplanationrating4) : 0)
+    
+                +(feedbackItem.survey.generalsurvey.doctorrating.doctorperformance5.doctorexplanationrating5 ? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance5.doctorexplanationrating5=== 6? 0:feedbackItem.survey.generalsurvey.doctorrating.doctorperformance5.doctorexplanationrating5) : 0)
+    
+                )/(totaldoctorentries)*100)/100;
+                doctor_scores = doctor_scores + doctorScore;
+    
+                    if (totaldoctorentries !== 0) num_feedbacks =num_feedbacks + 1;
+            }
             
-            var doctorScore = 0;
-            totaldoctorentries === 0 ? doctorScore = 0 :  doctorScore = Math.round(((feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorexplanationrating1 ? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorexplanationrating1=== 6? 0:feedbackItem.survey.generalsurvey.doctorrating.doctorperformance1.doctorexplanationrating1) : 0)
-
-            +(feedbackItem.survey.generalsurvey.doctorrating.doctorperformance2.doctorexplanationrating2 ? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance2.doctorexplanationrating2=== 6? 0:feedbackItem.survey.generalsurvey.doctorrating.doctorperformance2.doctorexplanationrating2) : 0)
-
-            +(feedbackItem.survey.generalsurvey.doctorrating.doctorperformance3.doctorexplanationrating3 ? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance3.doctorexplanationrating3=== 6? 0:feedbackItem.survey.generalsurvey.doctorrating.doctorperformance3.doctorexplanationrating3) : 0)
-
-            +(feedbackItem.survey.generalsurvey.doctorrating.doctorperformance4.doctorexplanationrating4 ? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance4.doctorexplanationrating4=== 6? 0:feedbackItem.survey.generalsurvey.doctorrating.doctorperformance4.doctorexplanationrating4) : 0)
-
-            +(feedbackItem.survey.generalsurvey.doctorrating.doctorperformance5.doctorexplanationrating5 ? (feedbackItem.survey.generalsurvey.doctorrating.doctorperformance5.doctorexplanationrating5=== 6? 0:feedbackItem.survey.generalsurvey.doctorrating.doctorperformance5.doctorexplanationrating5) : 0)
-
-            )/(totaldoctorentries)*100)/100;
-            doctor_scores = doctor_scores + doctorScore;
-
-                if (totaldoctorentries !== 0) num_feedbacks =num_feedbacks + 1;
             } catch {
                 continue;
             }

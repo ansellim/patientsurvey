@@ -9,20 +9,34 @@ export const VerbatimFeedback = (props) => {
 
        const feedbacks = state.feedbackItems;
         const listItems = [];
+        
        for (let i = 0; i < feedbacks.length; i++) {
              const feedbackItem = feedbacks[i];
+             
              if(props.departmentfilterval !== "All"){
                 if(feedbackItem.Patient.Ward === props.departmentfilterval){
+                    
+                       
                     if(feedbackItem.survey.specificsurvey){
+                       
                         if(feedbackItem.survey.specificsurvey.Status!== "Deleted" && feedbackItem.survey.specificsurvey.specificIncident!=="" && (feedbackItem.survey.specificsurvey.specificIncidentNature==="compliment" ||feedbackItem.survey.specificsurvey.specificIncidentNature==="complaint"||feedbackItem.survey.specificsurvey.specificIncidentNature==="suggestion"  )){
-                        listItems.push({id: i, content:feedbackItem.survey.specificsurvey.specificIncident, nature: feedbackItem.survey.specificsurvey.specificIncidentNature,  date: moment(feedbackItem.survey.specificsurvey.IncidentDate).format("Do MMM YYYY")})
+                            if (props.datefilterval!=="All"){
+                                if(moment(feedbackItem.survey.specificsurvey.IncidentDate).format("YYYY")==props.datefilterval)
+                                    listItems.push({id: i, content:feedbackItem.survey.specificsurvey.specificIncident, nature: feedbackItem.survey.specificsurvey.specificIncidentNature,  date: moment(feedbackItem.survey.specificsurvey.IncidentDate).format("Do MMM YYYY")})
+                            } else{
+                                listItems.push({id: i, content:feedbackItem.survey.specificsurvey.specificIncident, nature: feedbackItem.survey.specificsurvey.specificIncidentNature,  date: moment(feedbackItem.survey.specificsurvey.IncidentDate).format("Do MMM YYYY")})
+                            }
                    }}
                 }
              } else{
-                if(feedbackItem.survey.specificsurvey){
+                if(feedbackItem.survey.specificsurvey ){
                     if(feedbackItem.survey.specificsurvey.Status!== "Deleted" && feedbackItem.survey.specificsurvey.specificIncident!=="" && (feedbackItem.survey.specificsurvey.specificIncidentNature==="compliment" ||feedbackItem.survey.specificsurvey.specificIncidentNature==="complaint"||feedbackItem.survey.specificsurvey.specificIncidentNature==="suggestion"  )){
-                    listItems.push({id: i, content:feedbackItem.survey.specificsurvey.specificIncident, nature: feedbackItem.survey.specificsurvey.specificIncidentNature,  date: moment(feedbackItem.survey.specificsurvey.IncidentDate).format("Do MMM YYYY")})
-               }}
+                        if (props.datefilterval!=="All"){
+                            if(moment(feedbackItem.survey.specificsurvey.IncidentDate).format("YYYY")==props.datefilterval)
+                                listItems.push({id: i, content:feedbackItem.survey.specificsurvey.specificIncident, nature: feedbackItem.survey.specificsurvey.specificIncidentNature,  date: moment(feedbackItem.survey.specificsurvey.IncidentDate).format("Do MMM YYYY")})
+                        } else{
+                            listItems.push({id: i, content:feedbackItem.survey.specificsurvey.specificIncident, nature: feedbackItem.survey.specificsurvey.specificIncidentNature,  date: moment(feedbackItem.survey.specificsurvey.IncidentDate).format("Do MMM YYYY")})
+                        }               }}
              }
              
                  

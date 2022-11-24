@@ -7,8 +7,8 @@ import { HospitalityScore } from "../components/cards/HospitalityScore";
 import { StaffScore } from "../components/cards/StaffScore";
 import { DoctorScore } from "../components/cards/DoctorScore";
 import { OpenTicketsCount } from "../components/cards/OpenTicketsCount";
-//import { EfficiencyWaitingTime } from "../components/cards/EfficiencyWaitingTime";
-//import { EfficiencyValueForMoney } from "../components/cards/EfficiencyValueForMoney";
+import { EfficiencyWaitingTime } from "../components/cards/EfficiencyWaitingTime";
+import { EfficiencyValueForMoney } from "../components/cards/EfficiencyValueForMoney";
 import { useState } from "react";
 import Typography from "@mui/material/Typography";
 import Dropdown from 'react-dropdown';
@@ -27,6 +27,7 @@ import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 
 import Placeholder from "../Placeholder";
+import { EmployeeScore } from "../components/cards/EmployeeScore";
 
 import { VerbatimFeedback } from "../components/cards/VerbatimFeedback";
 //import { AverageHospitalityScore } from "../components/cards/AverageHospitalityScore";
@@ -108,7 +109,7 @@ const Dashboard = () => {
             </Grid>
 
             <Grid item lg={2}>
-            <Typography variant="h6">Time Period</Typography>
+            <Typography variant="h6">Time Period (Verbatim only)</Typography>
             <Dropdown options={dateoptions} onChange={selectFilterHandler3} value={defaultdatepOption} placeholder="Select an option" />
             </Grid>
           </Grid>
@@ -131,14 +132,9 @@ const Dashboard = () => {
             <Grid item lg={12}>
               <OpenTicketsCount hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></OpenTicketsCount>
             </Grid>
-{/* 
-            <Grid item lg={4}>
-              <EfficiencyWaitingTime></EfficiencyWaitingTime>
-            </Grid>
 
-            <Grid item lg={4}>
-              <EfficiencyValueForMoney></EfficiencyValueForMoney>
-            </Grid>
+{/* 
+            
 
             <Grid item lg={4}>
               <AverageHospitalityScore></AverageHospitalityScore>
@@ -158,11 +154,22 @@ const Dashboard = () => {
               <HospitalityScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></HospitalityScore>
             </Grid>
             <Grid item lg={6}>
+              <EfficiencyWaitingTime hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></EfficiencyWaitingTime>
+            </Grid>
+
+            <Grid item lg={6}>
+              <EfficiencyValueForMoney hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></EfficiencyValueForMoney>
+            </Grid>
+            <Grid item lg={12}>
+              <EmployeeScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></EmployeeScore>
+            </Grid>
+            <Grid item lg={6}>
               <StaffScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></StaffScore>
             </Grid>
             <Grid item lg={6}>
               <DoctorScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></DoctorScore>
             </Grid>
+            
           </Grid>
         </h1>
       </main>

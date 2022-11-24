@@ -2,9 +2,9 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 
-import LikertRating from './LikertRating';
+import GeneralCard from './GeneralCard';
 
-export const EfficiencyWaitingTime = () => {
+export const EfficiencyWaitingTime = (props) => {
 
     const score = useSelector((state) => {
 
@@ -17,9 +17,18 @@ export const EfficiencyWaitingTime = () => {
             const feedbackItem = feedbacks[i];
 
            try {
+            if(props.departmentfilterval !== "All"){
+                if(feedbackItem.Patient.Ward === props.departmentfilterval){
+                    const waitingTime = feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.waitingTime;
+                waitingTimeTotal = waitingTimeTotal + waitingTime;
+                num_feedbacks = num_feedbacks + 1;
+                }
+            }else{
                 const waitingTime = feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.waitingTime;
                 waitingTimeTotal = waitingTimeTotal + waitingTime;
                 num_feedbacks = num_feedbacks + 1;
+            }
+                
             } catch {
                 continue;
             }
@@ -35,7 +44,7 @@ export const EfficiencyWaitingTime = () => {
     return (
         <>
 
-            <LikertRating metricName="Efficiency Rating (Waiting Time)" score={score.average_score} numFeedback={score.num_feedbacks}></LikertRating>
+            <GeneralCard metricName="Waiting Time" score={Math.round(score.average_score * 100) / 5} numFeedback={score.num_feedbacks}></GeneralCard>
 
         </>
     )

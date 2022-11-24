@@ -2,9 +2,9 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 
-import LikertRating from './LikertRating';
+import GeneralCard from './GeneralCard';
 
-export const EfficiencyValueForMoney = () => {
+export const EfficiencyValueForMoney = (props) => {
 
     const score = useSelector((state) => {
 
@@ -12,17 +12,29 @@ export const EfficiencyValueForMoney = () => {
 
         var valueForMoneyTotal = 0;
         var num_feedbacks = 0;
-
+        var valueForMoneyScore = 0;
         for (let i = 0; i < feedbacks.length; i++) {
             const feedbackItem = feedbacks[i];
-
+            
            try {
-                const valueForMoneyScore = feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.valueForMoney;
+            if(props.departmentfilterval !== "All"){
+                if(feedbackItem.Patient.Ward === props.departmentfilterval){
+                    valueForMoneyScore = feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.valueForMoney;
 
                 if(!isNaN(valueForMoneyScore)){
                     valueForMoneyTotal = valueForMoneyTotal + valueForMoneyScore;
                     num_feedbacks = num_feedbacks + 1;
                 }
+                }
+            } else{
+                valueForMoneyScore = feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.valueForMoney;
+
+                if(!isNaN(valueForMoneyScore)){
+                    valueForMoneyTotal = valueForMoneyTotal + valueForMoneyScore;
+                    num_feedbacks = num_feedbacks + 1;
+                }
+            }
+                 
 
                
             } catch {
@@ -44,7 +56,7 @@ export const EfficiencyValueForMoney = () => {
     return (
         <>
 
-            <LikertRating metricName="Efficiency Rating (Value for Money)" score={score.average_score} numFeedback={score.num_feedbacks}></LikertRating>
+            <GeneralCard metricName="Value for Money" score={Math.round(score.average_score * 100) / 5} numFeedback={score.num_feedbacks}></GeneralCard>
 
         </>
     )
