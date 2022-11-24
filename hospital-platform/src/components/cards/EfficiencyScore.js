@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import GeneralCard from './GeneralCard';
 
-export const EfficiencyScore = () => {
+export const EfficiencyScore = (props) => {
 
     const score = useSelector((state) => {
 
@@ -17,12 +17,23 @@ export const EfficiencyScore = () => {
             const feedbackItem = feedbacks[i];
 
            try {
+            if(props.departmentfilterval !== "All"){
+                if(feedbackItem.Patient.Ward === props.departmentfilterval){
+                    var totalefficiencyentries =( feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.waitingTime? (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.waitingTime=== 6? 0:1): 0) + (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceSpeed ? (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceSpeed===6?0:1): 0) + (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceAccuracy ? (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceAccuracy===6?0:1): 0 )+ (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.valueForMoney ?  (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.valueForMoney===6?0:1) : 0);
+                    var efficiencyScore = 0;
+                    totalefficiencyentries === 0 ? efficiencyScore = 0 :  efficiencyScore = Math.round(((feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.waitingTime? (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.waitingTime=== 6? 0:feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.waitingTime): 0 )+ (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceSpeed ? (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceSpeed=== 6? 0:feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceSpeed): 0) + (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceAccuracy ? (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceAccuracy=== 6? 0:feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceAccuracy): 0) + (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.valueForMoney ? (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.valueForMoney=== 6? 0:feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.valueForMoney) : 0))/(totalefficiencyentries)*100)/100;
+                    efficiency_scores = efficiency_scores + efficiencyScore;
+
+                    if (totalefficiencyentries !== 0) num_feedbacks =num_feedbacks + 1;
+                }
+            } else{
                 var totalefficiencyentries =( feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.waitingTime? (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.waitingTime=== 6? 0:1): 0) + (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceSpeed ? (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceSpeed===6?0:1): 0) + (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceAccuracy ? (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceAccuracy===6?0:1): 0 )+ (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.valueForMoney ?  (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.valueForMoney===6?0:1) : 0);
                 var efficiencyScore = 0;
                 totalefficiencyentries === 0 ? efficiencyScore = 0 :  efficiencyScore = Math.round(((feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.waitingTime? (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.waitingTime=== 6? 0:feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.waitingTime): 0 )+ (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceSpeed ? (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceSpeed=== 6? 0:feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceSpeed): 0) + (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceAccuracy ? (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceAccuracy=== 6? 0:feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.serviceAccuracy): 0) + (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.valueForMoney ? (feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.valueForMoney=== 6? 0:feedbackItem.survey.generalsurvey.efficiencyrating.efficiency.valueForMoney) : 0))/(totalefficiencyentries)*100)/100;
                 efficiency_scores = efficiency_scores + efficiencyScore;
 
                 if (totalefficiencyentries !== 0) num_feedbacks =num_feedbacks + 1;
+            }
             } catch {
                 continue;
             }

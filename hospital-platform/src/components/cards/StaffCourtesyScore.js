@@ -58,7 +58,7 @@ export const StaffCourtesyScore = () => {
     return (
         <>
 
-            <SmallCard metricName="Staff Courtesy" score={Math.round(score.average_score * 100) / 5} numFeedback={score.num_feedbacks}></SmallCard>
+            <SmallCard metricName="Courtesy" score={Math.round(score.average_score * 100) / 5} numFeedback={score.num_feedbacks}></SmallCard>
 
         </>
     )

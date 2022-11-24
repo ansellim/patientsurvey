@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import GeneralCard from './GeneralCard';
 
-export const HospitalityScore = () => {
+export const HospitalityScore = (props) => {
 
     const score = useSelector((state) => {
 
@@ -17,12 +17,24 @@ export const HospitalityScore = () => {
             const feedbackItem = feedbacks[i];
 
            try {
-            var totalhospitalityentries =( feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.foodAndBeverage? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.foodAndBeverage=== 6? 0:1): 0) + (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.safetyAndSecurity ? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.safetyAndSecurity===6?0:1): 0) + (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.facilityManagement ? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.facilityManagement===6?0:1): 0 )+ (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.housekeeping ?  (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.housekeeping===6?0:1) : 0);
-            var hospitalityScore = 0;
-            totalhospitalityentries === 0 ? hospitalityScore = 0 :  hospitalityScore = Math.round(((feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.foodAndBeverage? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.foodAndBeverage=== 6? 0:feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.foodAndBeverage): 0 )+ (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.safetyAndSecurity ? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.safetyAndSecurity=== 6? 0:feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.safetyAndSecurity): 0) + (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.facilityManagement ? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.facilityManagement=== 6? 0:feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.facilityManagement): 0) + (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.housekeeping ? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.housekeeping=== 6? 0:feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.housekeeping) : 0))/(totalhospitalityentries)*100)/100;
-            hospitality_scores = hospitality_scores + hospitalityScore;
-
-                if (totalhospitalityentries !== 0) num_feedbacks =num_feedbacks + 1;
+            if(props.departmentfilterval !== "All"){
+                if(feedbackItem.Patient.Ward === props.departmentfilterval){
+                    var totalhospitalityentries =( feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.foodAndBeverage? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.foodAndBeverage=== 6? 0:1): 0) + (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.safetyAndSecurity ? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.safetyAndSecurity===6?0:1): 0) + (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.facilityManagement ? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.facilityManagement===6?0:1): 0 )+ (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.housekeeping ?  (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.housekeeping===6?0:1) : 0);
+                    var hospitalityScore = 0;
+                    totalhospitalityentries === 0 ? hospitalityScore = 0 :  hospitalityScore = Math.round(((feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.foodAndBeverage? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.foodAndBeverage=== 6? 0:feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.foodAndBeverage): 0 )+ (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.safetyAndSecurity ? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.safetyAndSecurity=== 6? 0:feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.safetyAndSecurity): 0) + (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.facilityManagement ? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.facilityManagement=== 6? 0:feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.facilityManagement): 0) + (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.housekeeping ? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.housekeeping=== 6? 0:feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.housekeeping) : 0))/(totalhospitalityentries)*100)/100;
+                    hospitality_scores = hospitality_scores + hospitalityScore;
+        
+                        if (totalhospitalityentries !== 0) num_feedbacks =num_feedbacks + 1;
+                }
+            } else{
+                var totalhospitalityentries =( feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.foodAndBeverage? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.foodAndBeverage=== 6? 0:1): 0) + (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.safetyAndSecurity ? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.safetyAndSecurity===6?0:1): 0) + (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.facilityManagement ? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.facilityManagement===6?0:1): 0 )+ (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.housekeeping ?  (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.housekeeping===6?0:1) : 0);
+                var hospitalityScore = 0;
+                totalhospitalityentries === 0 ? hospitalityScore = 0 :  hospitalityScore = Math.round(((feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.foodAndBeverage? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.foodAndBeverage=== 6? 0:feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.foodAndBeverage): 0 )+ (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.safetyAndSecurity ? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.safetyAndSecurity=== 6? 0:feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.safetyAndSecurity): 0) + (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.facilityManagement ? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.facilityManagement=== 6? 0:feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.facilityManagement): 0) + (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.housekeeping ? (feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.housekeeping=== 6? 0:feedbackItem.survey.generalsurvey.hospitalityrating.hospitality.housekeeping) : 0))/(totalhospitalityentries)*100)/100;
+                hospitality_scores = hospitality_scores + hospitalityScore;
+    
+                    if (totalhospitalityentries !== 0) num_feedbacks =num_feedbacks + 1;
+            }
+            
             } catch {
                 continue;
             }

@@ -4,33 +4,44 @@ import { useSelector } from 'react-redux';
 
 import GeneralCard from './GeneralCard';
 
-export const NetPromoterScore = () => {
+export const NetPromoterScore = (props) => {
 
     const score = useSelector((state) => {
 
         const feedbacks = state.feedbackItems;
-
-       // console.log(feedbacks[45])
-
         var num_feedbacks = 0;
         var num_promoters = 0;
         var num_detractors = 0;
-
+        
         for (let i = 0; i < feedbacks.length; i++) {
-            const feedback = feedbacks[i];
-
+            const feedbackItem = feedbacks[i];
+            var promotionRating = 0;
             try {
-                const promotionRating = feedback.survey.overallrating.NetPromoterScore;
+                if(props.departmentfilterval !== "All"){
+                    if(feedbackItem.Patient.Ward === props.departmentfilterval){
+                        promotionRating = feedbackItem.survey.overallrating.NetPromoterScore;
 
-                if (promotionRating >= 9) {
-                    num_promoters = num_promoters + 1;
-                } 
-                
-                if (promotionRating <= 6) {
-                    num_detractors = num_detractors + 1;
+                        if (promotionRating >= 9) {
+                            num_promoters = num_promoters + 1;
+                        } 
+                        
+                        if (promotionRating <= 6) {
+                            num_detractors = num_detractors + 1;
+                        }
+                        num_feedbacks = num_feedbacks + 1;
+                    }
+                    //feedbacks = state.feedbackItems.filter(state.feedbackItems.Patient.Ward===props.departmentfilterval);
+                } else{
+                    promotionRating = feedbackItem.survey.overallrating.NetPromoterScore;
+                    if (promotionRating >= 9) {
+                        num_promoters = num_promoters + 1;
+                    } 
+                    
+                    if (promotionRating <= 6) {
+                        num_detractors = num_detractors + 1;
+                    }
+                    num_feedbacks = num_feedbacks + 1;
                 }
-                num_feedbacks = num_feedbacks + 1;
-
             } catch {
                 continue;
             }

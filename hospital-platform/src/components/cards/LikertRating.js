@@ -12,9 +12,9 @@ export default function LikertRating(props) {
 
         <Typography variant="h5">{props.metricName}</Typography>
 
-        Score: <Typography variant="h3">{props.score}</Typography>
+        Score: <Typography variant="h3">{Math.round(props.score*100)/100}</Typography>
 
-        Number of feedback items: <Typography variant="h3">{props.numFeedback}</Typography>
+        # of feedback: <Typography variant="h3">{props.numFeedback}</Typography>
 
       </Card>
     </div>

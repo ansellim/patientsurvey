@@ -58,7 +58,7 @@ export const StaffEmpathyScore = () => {
     return (
         <>
 
-            <SmallCard metricName="Staff Empathy" score={Math.round(score.average_score * 100) / 5} numFeedback={score.num_feedbacks}></SmallCard>
+            <SmallCard metricName="Empathy" score={Math.round(score.average_score * 100) / 5} numFeedback={score.num_feedbacks}></SmallCard>
 
         </>
     )

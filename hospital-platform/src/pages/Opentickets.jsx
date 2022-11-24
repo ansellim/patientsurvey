@@ -12,8 +12,6 @@ import {
   ColumnDirective,
 } from "@syncfusion/ej2-react-kanban";
 import { useSelector } from 'react-redux';
-
-// For now, mockData is used just to create the content on the frontend.
 import { kanbanGrid } from "../static_data/tickets";
 
 const Opentickets = () => {
@@ -58,12 +56,6 @@ const Opentickets = () => {
         ticketstatus = event.data.Status;
         ticketId = event.data.Id;
          myticketsaved = await saveTicket({ticketstatus, ticketId });
-        // console.log(event.data.Id);
-        // console.log(event.data.Status);
-        // console.log(event.data.Summary);
-        // console.log(event.data.FeedbackProviderLastName);
-        // console.log(event.data.FeedbackProviderFirstName);
-        // console.log(event.data.FeedbackProviderContactNumber);
     } 
 
    return myticketsaved;
@@ -81,8 +73,8 @@ const Opentickets = () => {
 
   const cardTemplate =(props)=>{return(
     <div className="card-template">
-          <div className='e-card-content'>
-              <table className="card-template-wrap">
+          <div className='e-card-content'  >
+              <table className="card-template-wrap" width="100%">
                   <tbody>
                       <tr>
                           <td className="CardHeader">Id:</td>
@@ -99,8 +91,8 @@ const Opentickets = () => {
                       <tr>
                           <td className="CardHeader">FP Info:</td>
                           <td>{props.FeedbackProviderFirstName} {props.FeedbackProviderLastName} {props.FeedbackProviderRelationship}  
-                          <a href={"tel:" + `${props.FeedbackProviderContactNumber}`}> {props.FeedbackProviderContactNumber} </a> <Link to='javascript:void(0)'
-                         onClick={() => window.location = `mailto:${props.FeedbackProviderEmail}`}>{props.FeedbackProviderEmail}</Link></td>
+                          <a href={`tel:${props.FeedbackProviderContactNumber}`}> {props.FeedbackProviderContactNumber} </a> 
+                          <Link onClick={() => window.location = `mailto:${props.FeedbackProviderEmail}`}>{props.FeedbackProviderEmail}</Link></td>
                       </tr>
                       
                       
@@ -110,8 +102,7 @@ const Opentickets = () => {
                       </tr>
                       <tr>
                           <td className="CardHeader">Actions:</td>
-                          <td><Link to='javascript:void(0)'
-                         onClick={() => window.location = `mailto:`}><CiMail size={40}></CiMail></Link></td>
+                          <td><Link  onClick={() => window.location = `mailto:`} ><CiMail size={40}></CiMail></Link></td>
                       </tr>
                   </tbody>
               </table>
@@ -123,13 +114,12 @@ const Opentickets = () => {
       <KanbanComponent
         id="kanban"
         dataSource={mycomplaints.mycomplaints}
-        //dataSource={complaintsdata.mycomplaints}
         //cardSettings={{ contentField: "Summary", headerField: "Id", tagsField: "Date"}}
         cardSettings={{ template: cardTemplate.bind(this), headerField: "Id"}}
         keyField="Status"
         allowDragAndDrop={false} 
-    //   dialogOpen={e => handleClick(e)}
         dialogClose={e => HandleClick(e)}
+        
       >
         <ColumnsDirective >
           {kanbanGrid.map((item, index) => (

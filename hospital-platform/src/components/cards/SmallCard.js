@@ -9,11 +9,11 @@ export default function SmallCard(props) {
         <div>
           <Card variant="outlined">
 
-            <Typography variant="h6">{props.metricName}</Typography>
+            <Typography variant="h6"><b><i>{props.metricName}</i></b></Typography>
 
             <Typography variant="h5">Score: {props.score}%</Typography>
 
-            <Typography variant="h6">Number of feedback items: {props.numFeedback}</Typography>
+            <Typography variant="h6"># of feedback: {props.numFeedback}</Typography>
 
           </Card>
         </div>
