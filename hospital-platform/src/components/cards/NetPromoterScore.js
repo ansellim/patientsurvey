@@ -10,7 +10,7 @@ export const NetPromoterScore = () => {
 
         const feedbacks = state.feedbackItems;
 
-        console.log(feedbacks[45])
+       // console.log(feedbacks[45])
 
         var num_feedbacks = 0;
         var num_promoters = 0;
@@ -40,7 +40,7 @@ export const NetPromoterScore = () => {
         const percentDetractors = num_detractors / num_feedbacks * 100;
         const netPromoterScore = percentPromoters- percentDetractors;
 
-        console.log("net promoter score",netPromoterScore);
+      //  console.log("net promoter score",netPromoterScore);
 
         return { score: netPromoterScore, num_feedbacks: num_feedbacks }
 

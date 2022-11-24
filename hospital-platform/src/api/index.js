@@ -27,6 +27,7 @@ export async function saveTicket(statusticket){
     const { data: response } = await axios.post(url + "/updateticket", {
       body: JSON.stringify(statusticket), 
     });
+   // console.log(response);
     return response;
   }catch(error){
     console.log(error);

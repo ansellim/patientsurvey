@@ -31,11 +31,11 @@ export const EfficiencyValueForMoney = () => {
 
         }
 
-        console.log("total value of money",valueForMoneyTotal)
+        //console.log("total value of money",valueForMoneyTotal)
 
         const averageValueForMoney = valueForMoneyTotal/num_feedbacks;
 
-        console.log("Average Value for Money",averageValueForMoney);
+        //console.log("Average Value for Money",averageValueForMoney);
 
         return { average_score: averageValueForMoney , num_feedbacks: num_feedbacks }
 

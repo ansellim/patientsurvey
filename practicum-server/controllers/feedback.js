@@ -57,7 +57,7 @@ export const createFeedback = async (req, res) => {
     FeedbackProviderLastName,
     FeedbackProviderRelationship,
     FeedbackProviderContactNumber,
-    FeedbackProviderAddress,
+    FeedbackProviderEmail,
     FeedbackProviderGender,
     IncidentDate,
     specificIncidentNature,
@@ -130,7 +130,7 @@ export const createFeedback = async (req, res) => {
       FeedbackProviderLastName: FeedbackProviderLastName,
       FeedbackProviderRelationship: FeedbackProviderRelationship,
       FeedbackProviderContactNumber: FeedbackProviderContactNumber,
-      FeedbackProviderAddress: FeedbackProviderAddress,
+      FeedbackProviderEmail: FeedbackProviderEmail,
       FeedbackProviderGender: FeedbackProviderGender,
     },
     survey:{

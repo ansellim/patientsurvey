@@ -26,7 +26,7 @@ const feedbackProviderSchema = mongoose.Schema({
   FeedbackProviderLastName: String,
   FeedbackProviderRelationship: String,
   FeedbackProviderContactNumber: String,
-  FeedbackProviderAddress: String,
+  FeedbackProviderEmail: String,
   FeedbackProviderGender: String,
 
 });

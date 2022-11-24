@@ -2,7 +2,7 @@ import store from "../reducers";
 
 const currentState = store.getState();
 // We'll export a JSON object that can be used by the graphs to display data needed.
-console.log(currentState.feedbackItems);
+//console.log(currentState.feedbackItems);
 export const graph_data = currentState.feedbackItems.map((feedback) => {
   //   return {
   //     key: feedback._id,

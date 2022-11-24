@@ -29,7 +29,7 @@ export const updateticket = async (req, res) => {
      // res.status(201).json(newFeedback);
      
      // res.send('_id' + ticketId);    
-     
+     res.status(200).json(myitem);
    //   console.log(res);
     } catch (error) {
       console.log(error);

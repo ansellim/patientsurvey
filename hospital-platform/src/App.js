@@ -75,7 +75,7 @@ const App = () => {
               {/* Navigating to Employees page */}
               <Route path="/employees" element={<Employees />} />
 
-              {/* Navigating to Employees page */}
+              {/* Navigating to Wordcloud page */}
               <Route path="/wordcloud" element={<Wordcloud />} />
             </Routes>
           </div>
