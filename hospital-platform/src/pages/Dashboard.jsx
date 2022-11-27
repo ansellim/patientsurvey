@@ -9,6 +9,7 @@ import { DoctorScore } from "../components/cards/DoctorScore";
 import { OpenTicketsCount } from "../components/cards/OpenTicketsCount";
 import { EfficiencyWaitingTime } from "../components/cards/EfficiencyWaitingTime";
 import { EfficiencyValueForMoney } from "../components/cards/EfficiencyValueForMoney";
+import { SentimentScore } from "../components/cards/SentimentScore";
 import { useState } from "react";
 import Typography from "@mui/material/Typography";
 import Dropdown from 'react-dropdown';
@@ -218,12 +219,15 @@ const Dashboard = () => {
               <OpenTicketsCount hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></OpenTicketsCount>
             </Grid>
 
-{/* 
+            {/* 
             
 
             <Grid item lg={4}>
-              <AverageHospitalityScore></AverageHospitalityScore>
-            </Grid> */}
+              <SentimentScore hospitalfilterval={hospitalfilterval}
+                  departmentfilterval={departmentfilterval}
+                  datefilterval={datefilterval}></SentimentScore>
+            </Grid>
+
           </Grid>
         </h1>
       </aside>
