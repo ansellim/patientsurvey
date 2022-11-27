@@ -22,17 +22,17 @@ import { TotalProfessionalScore } from "../components/cards/TotalProfScore";
 import { TotalExplanationScore } from "../components/cards/TotalExplanationScore";
 import { TotalEmpathyScore } from "../components/cards/TotalEmpathyScore";
 import { TotalCourtesyScore } from "../components/cards/TotalCourtesyScore";
-import LineChart from "../components/charts/LineChart";
+//import LineChart from "../components/charts/LineChart";
 import { EmployeeScore } from "../components/cards/EmployeeScore";
 
-const DUMMY_DATA = {
-  series: [
-    {
-      name: "series-1",
-      data: [30, 40, 45, 50, 49, 60, 70, 91],
-    },
-  ],
-};
+// const DUMMY_DATA = {
+//   series: [
+//     {
+//       name: "series-1",
+//       data: [30, 40, 45, 50, 49, 60, 70, 91],
+//     },
+//   ],
+// };
 const Employees = () => {
   const hospitaloptions = [
     'ABCHospital'
@@ -193,7 +193,7 @@ const Employees = () => {
         </h1>
       </main>
 
-      <aside className="col-span-5 md:col-span-2 p-10 bg-rose-300 row-span-4">
+      <aside className="col-span-5 md:col-span-2 p-10 bg-rose-300 row-span-1">
       <h1 className="text-center text-2xl text-black">
       <Typography variant="h5"><b>Employee Verbatim</b></Typography>
         </h1>
@@ -206,12 +206,11 @@ const Employees = () => {
         </h1>
         
       </footer> */}
-       <aside className="col-span-5 md:col-span-4 p-10 row-span-2">
+       {/* <aside className="col-span-5 md:col-span-4 p-10 row-span-2">
       <h1 className="text-center text-2xl text-black">
         <Typography variant="h5"><b>Charts</b></Typography>
         </h1>
         <div className="text-center text-2xl grid grid-cols-2 grid-rows-3 gap-3">
-          {/* This div will be a 3x2 grid for the graphs */}
           <div>
             <LineChart
               series={DUMMY_DATA.series}
@@ -219,11 +218,10 @@ const Employees = () => {
             />
           </div>
           <div>
-            {/*JSON.stringify(graph_data)*/}
             <LineChart series={DUMMY_DATA.series} title="Title 6" />
           </div>
         </div>
-      </aside>
+      </aside> */}
     </div>
   );
 };

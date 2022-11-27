@@ -11,39 +11,24 @@ import { EfficiencyWaitingTime } from "../components/cards/EfficiencyWaitingTime
 import { EfficiencyValueForMoney } from "../components/cards/EfficiencyValueForMoney";
 import { useState } from "react";
 import Typography from "@mui/material/Typography";
-import Dropdown from "react-dropdown";
-import "react-dropdown/style.css";
-import {
-  nps,
-  hospitalityRating,
-  efficiencyRating,
-  overallRating,
-  vfmRating,
-  graph_data,
-} from "../static_data/graphData";
-import * as api from "../api";
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
-import Card from "@mui/material/Card";
+import * as api from "../api";
 
 import Grid from "@mui/material/Grid";
 
-import Placeholder from "../Placeholder";
 import { EmployeeScore } from "../components/cards/EmployeeScore";
 
 import { VerbatimFeedback } from "../components/cards/VerbatimFeedback";
 //import { AverageHospitalityScore } from "../components/cards/AverageHospitalityScore";
 
-const DUMMY_DATA = {
-  series: [
-    {
-      name: "series-1",
-      data: [30, 40, 45, 50, 49, 60, 70, 111],
-    },
-  ],
-};
+
 
 const Dashboard = () => {
-  const hospitaloptions = ["ABCHospital"];
+  const hospitaloptions = [
+    'ABCHospital'
+  ];
   const departmentoptions = [
     "All",
     "A&E",
@@ -69,26 +54,24 @@ const Dashboard = () => {
     "Ward 10 East",
     "Ward 10 West",
   ];
-
-  // Graph Data
   const [npsData, setNpsData] = useState([]);
   const [hospitalityData, setHospitalityData] = useState([]);
   const [efficiencyData, setEfficiencyData] = useState([]);
   const [overallData, setOverallData] = useState([]);
   const [vfmData, setVfmData] = useState([]);
   const [countData, setCountData] = useState([]);
-
   const getFeedbackItems = async () => {
     try {
       const { data: response } = await api.fetchFeedbackStatistics();
-      console.log(response);
+     // console.log(response);
       const npsGraphData = [
         {
           name: "NPS Score",
           data: response.map((obj) => {
+            var mydatay = Math.round(obj.avgNps * 100)/100;
             return {
               x: obj.date,
-              y: obj.avgNps,
+              y: mydatay,
             };
           }),
         },
@@ -99,9 +82,10 @@ const Dashboard = () => {
         {
           name: "Hospitality Score",
           data: response.map((obj) => {
+            var mydatay = Math.round(obj.avgHospitality * 100)/100;
             return {
               x: obj.date,
-              y: obj.avgHospitality,
+              y: mydatay,
             };
           }),
         },
@@ -112,9 +96,10 @@ const Dashboard = () => {
         {
           name: "Efficiency Score",
           data: response.map((obj) => {
+            var mydatay = Math.round(obj.avgEfficiency * 100)/100;
             return {
               x: obj.date,
-              y: obj.avgEfficiency,
+              y: mydatay,
             };
           }),
         },
@@ -125,9 +110,10 @@ const Dashboard = () => {
         {
           name: "Overall Score",
           data: response.map((obj) => {
+            var mydatay = Math.round(obj.avgOverallrating * 100)/100;
             return {
               x: obj.date,
-              y: obj.avgOverallrating,
+              y: mydatay,
             };
           }),
         },
@@ -138,9 +124,10 @@ const Dashboard = () => {
         {
           name: "Value for Money Score",
           data: response.map((obj) => {
+            var mydatay = Math.round(obj.avgVfm * 100)/100;
             return {
               x: obj.date,
-              y: obj.avgVfm,
+              y: mydatay,
             };
           }),
         },
@@ -151,9 +138,10 @@ const Dashboard = () => {
         {
           name: "Ratings Count",
           data: response.map((obj) => {
+            var mydatay = Math.round(obj.ratings_count * 100)/100;
             return {
               x: obj.date,
-              y: obj.ratings_count,
+              y: mydatay,
             };
           }),
         },
@@ -168,92 +156,69 @@ const Dashboard = () => {
     getFeedbackItems();
   }, []);
 
-  const dateoptions = ["All", "2019", "2020", "2021", "2022"];
+  const dateoptions = [
+    "All",
+    '2019', '2020', '2021', '2022'  ]
   const defaulthospOption = hospitaloptions[0];
   const defaultdeptOption = departmentoptions[0];
   const defaultdatepOption = dateoptions[0];
   const [hospitalfilterval, setHospitalFilterVal] = useState("ABCHospital");
   const [departmentfilterval, setDepartmentfilterval] = useState("All");
   const [datefilterval, setDatefilterval] = useState("All");
-  const selectFilterHandler1 = (event) => {
+  const selectFilterHandler1 =(event) =>{
     setHospitalFilterVal(event.value);
-  };
-  const selectFilterHandler2 = (event) => {
+    
+  }
+  const selectFilterHandler2 =(event) =>{
     setDepartmentfilterval(event.value);
-  };
-  const selectFilterHandler3 = (event) => {
+    
+  }
+  const selectFilterHandler3 =(event) =>{
     setDatefilterval(event.value);
-  };
+    
+  }
   return (
     <div className=" grid grid-cols-6 grid-rows-1">
       <header className="col-span-6 p-10 bg-amber-200 row-span-1">
-        <Typography variant="h5">
-          <b>Filters</b>
-        </Typography>
-        <Grid container rowSpacing={2} columnSpacing={2}>
-          <Grid item lg={2}>
-            <Typography variant="h6">Hospital</Typography>
-            <Dropdown
-              options={hospitaloptions}
-              onChange={selectFilterHandler1}
-              value={defaulthospOption}
-              placeholder="Select an option"
-            />
-          </Grid>
+      <Typography variant="h5"><b>Filters</b></Typography>
+      <Grid container rowSpacing={2} columnSpacing={2}>
+            <Grid item lg={2}>
+              <Typography variant="h6">Hospital</Typography>
+              <Dropdown options={hospitaloptions} onChange={selectFilterHandler1} value={defaulthospOption} placeholder="Select an option" />
+            </Grid>
 
-          <Grid item lg={2}>
+            <Grid item lg={2}>
             <Typography variant="h6">Department</Typography>
-            <Dropdown
-              options={departmentoptions}
-              onChange={selectFilterHandler2}
-              value={defaultdeptOption}
-              placeholder="Select an option"
-            />
-          </Grid>
+            <Dropdown options={departmentoptions} onChange={selectFilterHandler2} value={defaultdeptOption} placeholder="Select an option" />
 
-          <Grid item lg={2}>
+            </Grid>
+
+            <Grid item lg={2}>
             <Typography variant="h6">Time Period (Verbatim only)</Typography>
-            <Dropdown
-              options={dateoptions}
-              onChange={selectFilterHandler3}
-              value={defaultdatepOption}
-              placeholder="Select an option"
-            />
+            <Dropdown options={dateoptions} onChange={selectFilterHandler3} value={defaultdatepOption} placeholder="Select an option" />
+            </Grid>
           </Grid>
-        </Grid>
+        
+
       </header>
 
       <aside className="col-span-5 md:col-span-2 p-10 bg-gray-700 row-span-4">
         <h1 className="text-center text-2xl text-white">
-          <Typography variant="h5">
-            <b>Key Performance Indicators</b>
-          </Typography>
+          <Typography variant="h5"><b>Key Performance Indicators</b></Typography>
 
           <Grid container rowSpacing={2} columnSpacing={2}>
             <Grid item lg={12}>
-              <SatisfactionScore
-                hospitalfilterval={hospitalfilterval}
-                departmentfilterval={departmentfilterval}
-                datefilterval={datefilterval}
-              ></SatisfactionScore>
+              <SatisfactionScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></SatisfactionScore>
             </Grid>
 
             <Grid item lg={12}>
-              <NetPromoterScore
-                hospitalfilterval={hospitalfilterval}
-                departmentfilterval={departmentfilterval}
-                datefilterval={datefilterval}
-              ></NetPromoterScore>
+              <NetPromoterScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></NetPromoterScore>
             </Grid>
             <Grid item lg={12}>
-              <OpenTicketsCount
-                hospitalfilterval={hospitalfilterval}
-                departmentfilterval={departmentfilterval}
-                datefilterval={datefilterval}
-              ></OpenTicketsCount>
+              <OpenTicketsCount hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></OpenTicketsCount>
             </Grid>
 
-            {/* 
+{/* 
             
 
             <Grid item lg={4}>
@@ -265,77 +230,41 @@ const Dashboard = () => {
 
       <main className="col-span-5 md:col-span-2 p-10 bg-blue-200 h-full row-span-4">
         <h1 className="text-center text-2xl text-black">
-          <Typography variant="h5">
-            <b>Category Scores</b>
-          </Typography>
+          <Typography variant="h5"><b>Category Scores</b></Typography>
           <Grid container rowSpacing={2} columnSpacing={2}>
             <Grid item lg={6}>
-              <EfficiencyScore
-                hospitalfilterval={hospitalfilterval}
-                departmentfilterval={departmentfilterval}
-                datefilterval={datefilterval}
-              ></EfficiencyScore>
+              <EfficiencyScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></EfficiencyScore>
             </Grid>
             <Grid item lg={6}>
-              <HospitalityScore
-                hospitalfilterval={hospitalfilterval}
-                departmentfilterval={departmentfilterval}
-                datefilterval={datefilterval}
-              ></HospitalityScore>
+              <HospitalityScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></HospitalityScore>
             </Grid>
             <Grid item lg={6}>
-              <EfficiencyWaitingTime
-                hospitalfilterval={hospitalfilterval}
-                departmentfilterval={departmentfilterval}
-                datefilterval={datefilterval}
-              ></EfficiencyWaitingTime>
+              <EfficiencyWaitingTime hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></EfficiencyWaitingTime>
             </Grid>
 
             <Grid item lg={6}>
-              <EfficiencyValueForMoney
-                hospitalfilterval={hospitalfilterval}
-                departmentfilterval={departmentfilterval}
-                datefilterval={datefilterval}
-              ></EfficiencyValueForMoney>
+              <EfficiencyValueForMoney hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></EfficiencyValueForMoney>
             </Grid>
             <Grid item lg={12}>
-              <EmployeeScore
-                hospitalfilterval={hospitalfilterval}
-                departmentfilterval={departmentfilterval}
-                datefilterval={datefilterval}
-              ></EmployeeScore>
+              <EmployeeScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></EmployeeScore>
             </Grid>
             <Grid item lg={6}>
-              <StaffScore
-                hospitalfilterval={hospitalfilterval}
-                departmentfilterval={departmentfilterval}
-                datefilterval={datefilterval}
-              ></StaffScore>
+              <StaffScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></StaffScore>
             </Grid>
             <Grid item lg={6}>
-              <DoctorScore
-                hospitalfilterval={hospitalfilterval}
-                departmentfilterval={departmentfilterval}
-                datefilterval={datefilterval}
-              ></DoctorScore>
+              <DoctorScore hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></DoctorScore>
             </Grid>
+            
           </Grid>
         </h1>
       </main>
 
       <aside className="col-span-5 md:col-span-2 p-10 row-span-6">
         <h1 className="text-center text-2xl text-black">
-          <Typography variant="h5">
-            <b>Specific Verbatim</b>
-          </Typography>
+          <Typography variant="h5"><b>Specific Verbatim</b></Typography>
         </h1>
-        <VerbatimFeedback
-          hospitalfilterval={hospitalfilterval}
-          departmentfilterval={departmentfilterval}
-          datefilterval={datefilterval}
-        ></VerbatimFeedback>
+        <VerbatimFeedback hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></VerbatimFeedback>
       </aside>
-
       <div className="col-span-5 md:col-span-4 p-10 row-span-2">
         <h1 className="text-center text-2xl text-black">
           <Typography variant="h5">
@@ -378,6 +307,7 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
+
   );
 };
 

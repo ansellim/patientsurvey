@@ -3,21 +3,19 @@ import Chart from "react-apexcharts";
 
 const LineChart = ({ series, title }) => {
   const options = {
-    chart: {
-      type: "area",
-      background: "#eff4f7",
-      sparkline: {
-        enabled: true,
-      },
-    },
+    // chart: {
+    //   type: "area",
+    //   background: "#eff4f7",
+    //   sparkline: {
+    //     enabled: true,
+    //   },
+    // },
+   
     grid: {
+      show:true,
       borderColor: "#555",
       clipMarkers: false,
-      yaxis: {
-        lines: {
-          show: false,
-        },
-      },
+      
     },
     fill: {
       type: "solid",
@@ -29,6 +27,7 @@ const LineChart = ({ series, title }) => {
     toolbar: {
       show: true,
     },
+    
     title: { text: title },
     offsetX: -30,
     offsetY: 100,
@@ -37,7 +36,7 @@ const LineChart = ({ series, title }) => {
   };
   return (
     <div>
-      <Chart series={series} options={options}></Chart>
+      <Chart series={series} options={options} ></Chart>
     </div>
   );
 };

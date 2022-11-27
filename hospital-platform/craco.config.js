@@ -5,11 +5,4 @@ module.exports = {
       plugins: [require("tailwindcss"), require("autoprefixer")],
     },
   },
-  webpack: {
-    configure: {
-      experiments: {
-        topLevelAwait: true,
-      },
-    },
-  },
 };

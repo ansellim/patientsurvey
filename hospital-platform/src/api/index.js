@@ -8,7 +8,7 @@ export const fetchFeedback = () => axios.get(url + "/feedback"); // get feedback
 
 export const fetchFeedbackStatistics = () =>
   axios.get(url + "/feedback/statistics"); // get feedback statics items from backend that are used by graph
-
+  
 export async function loginUser(credentials) {
   try {
     const { data: response } = await axios.post(url + "/login", {
@@ -20,19 +20,20 @@ export async function loginUser(credentials) {
   }
 }
 
-export async function saveTicket(statusticket) {
-  try {
+export async function saveTicket(statusticket){
+  try{
     //console.log(statusticket);
     // const { data: response } = await axios.post(url + "/login", {
-    //   body: JSON.stringify(statusticket.ticketstatus, ticketId),
+    //   body: JSON.stringify(statusticket.ticketstatus, ticketId), 
     //}); //use data destructuring to get data from the promise object
     //return response;
     const { data: response } = await axios.post(url + "/updateticket", {
-      body: JSON.stringify(statusticket),
+      body: JSON.stringify(statusticket), 
     });
-    // console.log(response);
+   // console.log(response);
     return response;
-  } catch (error) {
+  }catch(error){
     console.log(error);
   }
+
 }
