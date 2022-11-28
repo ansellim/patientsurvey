@@ -62,8 +62,8 @@ export const SentimentScore = (props) => {
         });
     
     return (
-        <div className={classes.container}>
-            <GeneralCard metricName="Sentiment Score" score={sentimentInformation.averageSentiment*100} numFeedback={sentimentInformation.numOfFeedbacks} ></GeneralCard>
+        <div>
+            <GeneralCard metricName="Sentiment Score" score={(sentimentInformation.averageSentiment*100).toFixed(2)} numFeedback={sentimentInformation.numOfFeedbacks} ></GeneralCard>
         </div>
 
     );

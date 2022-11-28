@@ -4,6 +4,7 @@ import { SatisfactionScore } from "../components/cards/SatisfactionScore";
 import { NetPromoterScore } from "../components/cards/NetPromoterScore";
 import { EfficiencyScore } from "../components/cards/EfficiencyScore";
 import { HospitalityScore } from "../components/cards/HospitalityScore";
+import {SentimentScore} from "../components/cards/SentimentScore";
 import { StaffScore } from "../components/cards/StaffScore";
 import { DoctorScore } from "../components/cards/DoctorScore";
 import { OpenTicketsCount } from "../components/cards/OpenTicketsCount";
@@ -217,6 +218,13 @@ const Dashboard = () => {
             <Grid item lg={12}>
               <OpenTicketsCount hospitalfilterval={hospitalfilterval} departmentfilterval={departmentfilterval} datefilterval={datefilterval}></OpenTicketsCount>
             </Grid>
+
+            <Grid item lg={12}>
+              <SentimentScore hospitalfilterval={hospitalfilterval}
+                  departmentfilterval={departmentfilterval}
+                  datefilterval={datefilterval}></SentimentScore>
+            </Grid>
+
 
 {/* 
             
