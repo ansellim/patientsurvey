@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-const url = "https://34.125.120.160:3006"; // to connect to the Express server
+const url = "http://34.125.120.160:3006"; // to connect to the Express server
 
 export const fetchFeedback = () => axios.get(url + "/feedback"); // get feedback items from backend
 
