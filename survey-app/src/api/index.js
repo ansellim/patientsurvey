@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Hardcoded to point to the server's Endpoint for feedback.
 // Testing change.
-const url = "http://localhost:3006/feedback";
+const url = "http://34.125.120.160:3006/feedback";
 
 export const fetchFeedback = () => {
   axios.get(url).then((res) => {

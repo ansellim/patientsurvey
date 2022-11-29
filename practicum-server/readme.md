@@ -39,12 +39,12 @@ Right now, the only collection that exists in the database is the `feedbacks` co
 ## Fetch list of feedback objects available
 
 - Type: GET
-- Endpoint: http://localhost:3006/feedback
+- Endpoint: http://34.125.120.160:3006/feedback
 
 ## Create feedback:
 
 - Type: POST
-- Endpoint: http://localhost:3006/feedback
+- Endpoint: http://34.125.120.160:3006/feedback
 - Body: (Refer to Postman Collection)
 
 # References

@@ -30,8 +30,8 @@ The project is a full-stack web application consisting of three modules:
 
 3. Access the modules:
 
-a) Front-end patient feedback portal: http://localhost:3000
+a) Front-end patient feedback portal: http://34.125.120.160:3000
 
-b) Back-end server: http://localhost:3006
+b) Back-end server: http://34.125.120.160:3006
 
-c) Front-end dashboard app for hospital administrators: http://localhost:4200
+c) Front-end dashboard app for hospital administrators: http://34.125.120.160:4200
